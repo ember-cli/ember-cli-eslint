@@ -1,6 +1,11 @@
 # Ember-cli-eslint
 
-This README outlines the details of collaborating on this Ember addon.
+Initial work for supporting eslinting ember.
+- Requires: https://github.com/eslint/espree/pull/43
+
+TODO
+- Fix module support
+- Set sensible defaults for ES6 support
 
 ## Installation
 
