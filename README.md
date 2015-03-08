@@ -1,30 +1,19 @@
 # Ember-cli-eslint
 
 Initial work for supporting eslinting ember.
+
+As current ember setups require modules, eslint doesn't have the native support we need yet:
 - Requires: https://github.com/eslint/espree/pull/43
 
-TODO
-- Fix module support
-- Set sensible defaults for ES6 support
+However to use, babel-eslint parser can solve this.
+
+Adding the following to your parser after installing will solve this issue:
+```
+    "parser": "babel-eslint",
+```
+
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `ember install:addon ember-cli-eslint`
 
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).

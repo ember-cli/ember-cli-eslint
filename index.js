@@ -5,6 +5,7 @@ var eslint = require('broccoli-eslint');
 module.exports = {
   name: 'ember-cli-eslint',
   included: function (app) {
+    this._super.included(app);
     this.jshintrc = app.options.jshintrc;
   },
   lintTree: function(type, tree) {
