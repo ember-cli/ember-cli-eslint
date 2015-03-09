@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-eslint",
-  "version": "0.0.2",
-  "description": "Ember eslint support",
+  "version": "0.0.4",
+  "description": "Ember eslint support, for checking your application matches your coding standards.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,18 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonathanKingston/ember-cli-eslint.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "bugs": {
+    "url": "https://github.com/jonathanKingston/ember-cli-eslint/issues"
+  },
+  "homepage": "https://github.com/jonathanKingston/ember-cli-eslint",
+  "author": "Jonathan Kingston",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
@@ -36,7 +43,7 @@
     "glob": "^4.0.5"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon", "lint", "eslint", "ember"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
