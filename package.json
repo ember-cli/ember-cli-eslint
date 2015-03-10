@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-eslint",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ember eslint support, for checking your application matches your coding standards.",
   "directories": {
     "doc": "doc",
@@ -43,9 +43,15 @@
     "glob": "^4.0.5"
   },
   "keywords": [
-    "ember-addon", "lint", "eslint", "ember"
+    "ember-addon",
+    "lint",
+    "eslint",
+    "ember"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "dependencies": {
+    "broccoli-eslint": "git://github.com/jonathanKingston/broccoli-eslint#ember-cli-eslint"
   }
 }
