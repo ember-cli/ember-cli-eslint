@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-eslint",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Ember eslint support, for checking your application matches your coding standards.",
   "directories": {
     "doc": "doc",
@@ -27,7 +27,6 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
     "broccoli-ember-hbs-template-compiler": "^1.6.1",
-    "broccoli-eslint": "git://github.com/jonathanKingston/broccoli-eslint#ember-cli-eslint",
     "ember-cli": "0.1.12",
     "ember-cli-6to5": "^3.0.0",
     "ember-cli-app-version": "0.3.1",
@@ -52,6 +51,6 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
-    "broccoli-eslint": "git://github.com/jonathanKingston/broccoli-eslint#ember-cli-eslint"
+    "broccoli-eslint": "https://github.com/jonathanKingston/broccoli-eslint.git#ember-cli-eslint"
   }
 }
