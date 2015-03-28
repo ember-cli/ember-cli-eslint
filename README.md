@@ -7,14 +7,9 @@ ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable
 * `ember install:addon ember-cli-eslint`
 * This will create a `eslint.json` file in your project directory setup with the correct parser.
 
-## Native ESLint support
-
-As current Ember setups require modules, ESLint doesn't have the native support we need yet:
-- Requires: https://github.com/eslint/espree/pull/43
-
 ## ESLint Babel
 
-However to use, babel-eslint parser will solve the missing functionality in ESLint.
+babel-eslint parser will solve any new ECMA missing functionality in ESLint.
 
 Adding the following to your parser after installing will solve this issue:
 ```
