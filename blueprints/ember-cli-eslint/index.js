@@ -10,6 +10,6 @@ module.exports = {
   afterInstall: function() {
     var addonContext = this;
 
-    return this.addPackageToProject('babel-eslint', '^1.0.14');
+    return this.addPackageToProject('babel-eslint', '^2.0.2');
   }
 };

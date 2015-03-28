@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-eslint",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Ember eslint support, for checking your application matches your coding standards.",
   "directories": {
     "doc": "doc",
