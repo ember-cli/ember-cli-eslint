@@ -1,6 +1,6 @@
 /* jshint node: true */
 'use strict';
-var eslint = require('broccoli-eslint');
+var eslint = require('broccoli-lint-eslint');
 
 module.exports = {
   name: 'ember-cli-eslint',
