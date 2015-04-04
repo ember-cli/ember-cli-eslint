@@ -7,11 +7,21 @@ module.exports = {
   included: function (app) {
     this._super.included(app);
     this.jshintrc = app.options.jshintrc;
+    this.options = app.options.eslint || {};
   },
   lintTree: function(type, tree) {
     return eslint(tree, {
       config: this.jshintrc.app + '/eslint.json',
-      rulesdir: this.jshintrc.app
+      rulesdir: this.jshintrc.app,
+      testGenerator: this.options.testGenerator || generateEmptyTest
     });
   }
 };
+
+// Empty test generator. The reason we do that is that `lintTree`
+// will merge the returned tree with the `tests` directory anyway,
+// so we minimize the damage by returning empty files instead of
+// duplicating app tree.
+function generateEmptyTest() {
+  return '';
+}
