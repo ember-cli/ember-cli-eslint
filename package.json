@@ -51,6 +51,6 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "^0.1.0"
+    "broccoli-lint-eslint": "^0.1.1"
   }
 }
