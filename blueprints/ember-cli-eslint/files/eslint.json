@@ -6,7 +6,6 @@
     },
     "ecmaFeatures": {
         "blockBindings": true,
-        "jsx": true,
         "modules": true,
         "module": true
     },
@@ -18,7 +17,7 @@
         "no-caller": 2,
         "no-extra-bind": 2,
         "no-catch-shadow": 2,
-        "no-comma-dangle": 2,
+        "comma-dangle": [2, "never"],
         "no-irregular-whitespace": 2,
         "no-cond-assign": 2,
         "no-console": 2,
@@ -63,6 +62,7 @@
         "no-obj-calls": 2,
         "no-octal": 2,
         "no-octal-escape": 2,
+        "no-param-reassign": 2,
         "no-path-concat": 0,
         "no-plusplus": 0,
         "no-process-exit": 2,
@@ -118,7 +118,7 @@
         "space-in-brackets": [0, "never"],
         "space-infix-ops": 2,
         "space-return-throw-case": 2,
-        "space-unary-word-ops": 0,
+        "space-unary-ops": [2, {"words": true, "nonwords": false}],
         "use-isnan": 2,
         "valid-jsdoc": 2,
         "wrap-iife": 0,
