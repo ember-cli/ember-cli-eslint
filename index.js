@@ -11,8 +11,7 @@ module.exports = {
   },
   lintTree: function(type, tree) {
     return eslint(tree, {
-      config: this.jshintrc.app + '/eslint.json',
-      rulesdir: this.jshintrc.app,
+      rulePaths: [this.jshintrc.app],
       testGenerator: this.options.testGenerator || generateEmptyTest
     });
   }
