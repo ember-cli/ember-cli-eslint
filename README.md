@@ -4,7 +4,7 @@ ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable
 
 ## Basic setup
 
-* `ember install:addon ember-cli-eslint`
+* `ember install ember-cli-eslint`
 * This will create a `eslint.json` file in your project directory setup with the correct parser.
 
 ## ESLint Babel
