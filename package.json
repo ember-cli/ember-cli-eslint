@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-eslint",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Ember-cli eslint support, for checking your application matches your coding standards.",
   "directories": {
     "doc": "doc",
@@ -54,6 +54,6 @@
     "main": "index.js"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "jonathanKingston/broccoli-lint-eslint#relative-tests"
+    "broccoli-lint-eslint": "^0.1.4"
   }
 }
