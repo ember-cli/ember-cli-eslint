@@ -75,6 +75,14 @@ function eslintTestGenerator(relativePath, errors) {
 
 ```
 
+## Running tests
+
+```
+npm install -g phantomjs;
+ember test
+```
+
+The tests are using the dummy app to output tests.
 
 ## Licence
 
