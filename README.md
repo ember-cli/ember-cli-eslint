@@ -18,7 +18,7 @@ Adding the following to your parser after installing will solve this issue:
 
 ## Installation
 
-* `ember install:addon ember-cli-eslint`
+* `ember install ember-cli-eslint`
 
 ## Adding a Test Generator
 
