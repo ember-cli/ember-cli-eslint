@@ -1,3 +1,6 @@
+# 1.0.0-beta.2
+- Update blueprint to use eslint-config-ember
+
 # 0.1.4
 
 - Updating documentation
