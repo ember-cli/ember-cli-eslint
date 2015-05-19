@@ -9,6 +9,12 @@ module.exports = {
     this.jshintrc = app.options.jshintrc;
     this.options = app.options.eslint || {};
   },
+  afterInstall: function () {
+    return this.addAddonToProject({
+      name: 'eslint-config-ember',
+      target: '^0.0.4'
+    });
+  },
   lintTree: function(type, tree) {
     return eslint(tree, {
       testGenerator: this.options.testGenerator || generateEmptyTest
