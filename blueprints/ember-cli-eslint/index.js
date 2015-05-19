@@ -7,6 +7,13 @@ module.exports = {
     // to us
   },
 
+  afterInstall: function () {
+    return this.addAddonToProject({
+      name: 'eslint-config-ember',
+      target: '^0.0.5'
+    });
+  },
+
   afterInstall: function() {
     var addonContext = this;
   }
