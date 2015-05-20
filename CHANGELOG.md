@@ -1,3 +1,7 @@
+# 1.0.0-beta.8
+- Fixing linting errors for dummy app
+- Moving to package install in ember blueprint
+
 # 1.0.0-beta.7
 - Remove dirs and files that are not required
 - Fix testing .eslintrc blueprint file
