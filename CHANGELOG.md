@@ -1,3 +1,7 @@
+# 1.0.0-beta.10
+- Update badges
+- Update package call
+
 # 1.0.0-beta.9
 - Force change due to npm index.js issue
 - Add badge for travis
