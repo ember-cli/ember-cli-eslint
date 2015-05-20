@@ -8,10 +8,7 @@ module.exports = {
   },
 
   afterInstall: function () {
-    return this.addPackageToProject({
-      name: 'eslint-config-ember',
-      target: '^0.0.5'
-    });
+    return this.addPackageToProject('eslint-config-ember', '^0.0.5');
   },
 
   afterInstall: function() {
