@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 var eslint = require('broccoli-lint-eslint');
 

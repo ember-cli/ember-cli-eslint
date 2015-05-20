@@ -1,3 +1,7 @@
+# 1.0.0-beta.9
+- Force change due to npm index.js issue
+- Add badge for travis
+
 # 1.0.0-beta.8
 - Fixing linting errors for dummy app
 - Moving to package install in ember blueprint
