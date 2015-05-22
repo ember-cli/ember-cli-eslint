@@ -1,3 +1,6 @@
+# 1.0.0-beta.11
+- Bump package number, again
+
 # 1.0.0-beta.10
 - Update badges
 - Update package call
