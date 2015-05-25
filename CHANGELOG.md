@@ -1,3 +1,6 @@
+# 1.0.0-beta.12
+- Upgrade broccoli-lint-eslint to 1.0.0
+
 # 1.0.0-beta.11
 - Bump package number, again
 
