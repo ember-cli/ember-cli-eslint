@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-eslint",
-  "version": "1.0.0-beta.13",
+  "version": "1.0.0-beta.14",
   "description": "Ember-cli eslint support, for checking your application matches your coding standards.",
   "directories": {
     "doc": "doc",
@@ -56,6 +56,6 @@
     "defaultBlueprint": "ember-cli-eslint"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "^1.0.1"
+    "broccoli-lint-eslint": "^1.0.2"
   }
 }
