@@ -1,3 +1,9 @@
+# 1.0.0-beta.15
+- Bumping package because npm broke index.js again
+
+# 1.0.0-beta.14
+- Bumping version for broccoli-lint-eslint and eslint-config-ember
+
 # 1.0.0-beta.13
 - Adding tmp to .npmignore
 
