@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 var eslint = require('broccoli-lint-eslint');
 
@@ -11,7 +10,6 @@ module.exports = {
   },
   lintTree: function(type, tree) {
     return eslint(tree, {
-      rulePaths: [this.jshintrc.app],
       testGenerator: this.options.testGenerator || generateEmptyTest
     });
   }
