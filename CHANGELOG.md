@@ -1,3 +1,6 @@
+# 1.0.0
+- Bumping package to publish beta to stable
+
 # 1.0.0-beta.15
 - Bumping package because npm broke index.js again
 
