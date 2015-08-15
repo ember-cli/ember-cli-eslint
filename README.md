@@ -29,7 +29,7 @@ You can pass a `testGenerator` function to `EmberApp`. Use the `eslint` option.
 Example:
 
 ```javascript
-// Brocfile.js
+// ember-cli-build.js (or Brocfile.js on older versions of ember-cli)
 
 var path = require('path');
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
@@ -43,7 +43,7 @@ var app = new EmberApp({
 });
 
 function render(errors) {
-  if (!errors) { return ''; };
+  if (!errors) { return ''; }
   return errors.map(function(error) {
     return error.line + ':' + error.column + ' ' +
       ' - ' + error.message + ' (' + error.ruleId +')';
