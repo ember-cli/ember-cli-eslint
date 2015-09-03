@@ -1,3 +1,6 @@
+# 1.1.0
+- Upgrading package dependencies for Ember 1.13.8
+
 # 1.0.0
 - Bumping package to publish beta to stable
 
