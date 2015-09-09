@@ -1,3 +1,6 @@
+# 1.2.0
+- Updated to eslint@1.1.3
+
 # 1.1.0
 - Upgrading package dependencies for Ember 1.13.8
 

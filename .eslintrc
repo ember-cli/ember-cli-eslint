@@ -1,3 +1,6 @@
 {
-  "extends": "ember"
+  "extends": "ember",
+  "rules": {
+    "prefer-arrow-callback": 0
+  }
 }
