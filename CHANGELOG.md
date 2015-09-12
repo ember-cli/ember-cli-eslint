@@ -1,3 +1,8 @@
+# 1.2.1
+- Updated to eslint@1.4.1
+  - eslint-config-ember@0.1.1
+  - broccoli-lint-eslint@1.1.1
+
 # 1.2.0
 - Updated to eslint@1.1.3
 
