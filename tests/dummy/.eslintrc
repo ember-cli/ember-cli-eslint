@@ -1,9 +1,6 @@
 {
   "extends": "ember",
   "parser": "babel-eslint",
-  "env": {
-    "es6": true
-  },
   "rules": {
     "prefer-arrow-callback": 0,
     "space-before-function-paren": [0, { "anonymous": "always", "named": "always" }],
