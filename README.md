@@ -11,7 +11,8 @@ ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable
 
 babel-eslint parser will solve any new ECMA missing functionality in ESLint.
 
-Adding the following to your parser after installing will solve this issue:
+Adding the following to your .eslintrc file after installing will solve this issue:
+
 ```
     "parser": "babel-eslint",
 ```
@@ -22,9 +23,11 @@ Adding the following to your parser after installing will solve this issue:
 
 ## Adding a Test Generator
 
-You may want to generate tests that pass/fail based on the eslint result.
+You may want to generate tests that pass or fail based on the ESLint result.
 
-You can pass a `testGenerator` function to `EmberApp`. Use the `eslint` option.
+You can pass a `testGenerator` function to `EmberApp` via the `eslint` option.
+Ember-cli-eslint offers two such test generators out of the box: `qunit` and
+`mocha`.
 
 Example:
 
@@ -33,47 +36,17 @@ Example:
 
 var path = require('path');
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-// `npm install --save-dev js-string-escape`
-var jsStringEscape = require('js-string-escape');
+var testGenerators = require('ember-cli-eslint/test-generators');
 
 var app = new EmberApp({
   eslint: {
-    testGenerator: eslintTestGenerator
+    testGenerator: testGenerators.qunit // or testGenerators.mocha
   }
 });
-
-function render(errors) {
-  if (!errors) { return ''; }
-  return errors.map(function(error) {
-    return error.line + ':' + error.column + ' ' +
-      ' - ' + error.message + ' (' + error.ruleId +')';
-  }).join('\n');
-}
-
-// Qunit test generator
-function eslintTestGenerator(relativePath, errors) {
-  var pass = !errors || errors.length === 0;
-  return "import { module, test } from 'qunit';\n" +
-    "module('ESLint - " + path.dirname(relativePath) + "');\n" +
-    "test('" + relativePath + " should pass ESLint', function(assert) {\n" +
-    "  assert.ok(" + pass + ", '" + relativePath + " should pass ESLint." +
-    jsStringEscape("\n" + render(errors)) + "');\n" +
-   "});\n";
-}
-
-// Mocha test generator
-function eslintTestGenerator(relativePath, errors) {
-  var pass = !errors || errors.length === 0;
-  return "import { describe, it } from 'mocha';\n" +
-    "import { assert } from 'chai';\n" +
-    "describe('ESLint - " + path.dirname(relativePath) + "', function() {\n" +
-    "  it('" + relativePath + " should pass ESLint', function() {\n" +
-    "    assert.ok(" + pass + ", '" + relativePath + " should pass ESLint." +
-    jsStringEscape("\n" + render(errors)) + "');\n" +
-   "  });\n});\n";
-}
-
 ```
+
+You can also write your own `testGenerator` function. See
+[test-generators.js](test-generators.js) for help getting starting with that.
 
 ## Running tests
 

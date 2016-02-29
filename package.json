@@ -43,7 +43,6 @@
     "ember-try": "0.0.8",
     "eslint-config-ember": "^0.2.1",
     "express": "^4.12.3",
-    "js-string-escape": "^1.0.0",
     "phantomjs": "^1.9.16"
   },
   "keywords": [
@@ -60,6 +59,7 @@
     "defaultBlueprint": "ember-cli-eslint"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "^1.1.1"
+    "broccoli-lint-eslint": "^1.1.1",
+    "js-string-escape": "^1.0.0"
   }
 }
