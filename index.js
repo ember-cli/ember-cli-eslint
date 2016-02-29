@@ -1,5 +1,6 @@
 'use strict';
 var eslint = require('broccoli-lint-eslint');
+var jsStringEscape = require('js-string-escape');
 
 module.exports = {
   name: 'ember-cli-eslint',
@@ -15,16 +16,37 @@ module.exports = {
   },
 
   lintTree: function(type, tree) {
+    var project = this.project;
+
     return eslint(tree, {
-      testGenerator: this.options.testGenerator || generateEmptyTest
+      testGenerator: this.options.testGenerator || function(relativePath, errors) {
+        if (!project.generateTestFile) {
+          // Empty test generator. The reason we do that is that `lintTree`
+          // will merge the returned tree with the `tests` directory anyway,
+          // so we minimize the damage by returning empty files instead of
+          // duplicating app tree.
+          return '';
+        }
+
+        var passed = !errors || errors.length === 0;
+
+        if (errors) {
+          errors = jsStringEscape('\n' + render(errors));
+        }
+
+        return project.generateTestFile('ESLint - ' + relativePath, [{
+          name: 'should pass ESLint',
+          passed: passed,
+          errorMessage: relativePath + ' should pass ESLint.' + errors
+        }]);
+      }
     });
   }
 };
 
-// Empty test generator. The reason we do that is that `lintTree`
-// will merge the returned tree with the `tests` directory anyway,
-// so we minimize the damage by returning empty files instead of
-// duplicating app tree.
-function generateEmptyTest() {
-  return '';
+function render(errors) {
+  return errors.map(function(error) {
+    return error.line + ':' + error.column + ' ' +
+      ' - ' + error.message + ' (' + error.ruleId +')';
+  }).join('\n');
 }
