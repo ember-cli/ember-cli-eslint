@@ -1,0 +1,17 @@
+'use strict';
+
+module.exports = {
+  "extends": "ember",
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true
+  },
+  "rules": {
+    "prefer-arrow-callback": 0,
+    "space-before-function-paren": [0, { "anonymous": "always", "named": "never" }],
+    "object-curly-spacing": 0,
+    "prefer-reflect": 0,
+    "newline-after-var": 0,
+    "arrow-spacing": 0
+  }
+};
