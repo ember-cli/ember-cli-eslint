@@ -49,6 +49,11 @@
     "loader.js": "^4.0.0",
     "phantomjs": "^2.1.3"
   },
+  "dependencies": {
+    "broccoli-lint-eslint": "^1.1.1",
+    "ember-cli-babel": "^5.1.5",
+    "js-string-escape": "^1.0.0"
+  },
   "keywords": [
     "ember-addon",
     "lint",
@@ -57,19 +62,11 @@
     "eslint ember-cli",
     "ember"
   ],
-  "dependencies": {
-    "broccoli-lint-eslint": "^1.1.1",
-    "ember-cli-babel": "^5.1.5"
-  },
   "main": "index.js",
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "before": "ember-cli-qunit",
     "main": "index.js",
     "defaultBlueprint": "ember-cli-eslint"
-  },
-  "dependencies": {
-    "broccoli-lint-eslint": "^1.1.1",
-    "js-string-escape": "^1.0.0"
   }
 }
