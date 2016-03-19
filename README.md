@@ -20,60 +20,29 @@ Adding the following to your parser after installing will solve this issue:
 
 * `ember install ember-cli-eslint`
 
-## Adding a Test Generator
+## Configuration
 
-You may want to generate tests that pass/fail based on the eslint result.
+ESLint will be run by `ember-cli-qunit` or `ember-cli-mocha` automatically; **no additional configuration is required**.  If ESLint is *not* being run automatically, try updating your `ember-cli` or `ember-cli-qunit`/`embe-cli-mocha` version.
 
-You can pass a `testGenerator` function to `EmberApp`. Use the `eslint` option.
-
-Example:
+If you want to customize the way the tests are generated for your test runner, you can define a `testGenerator` in the configuration options:
 
 ```javascript
-// ember-cli-build.js (or Brocfile.js on older versions of ember-cli)
-
-var path = require('path');
+// ember-cli-build.js
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-// `npm install --save-dev js-string-escape`
-var jsStringEscape = require('js-string-escape');
+
+function eslintTestGenerator(relativePath, errors) {
+  var testFormat = '....';  // Whatever the format for the tests in your framework is
+  return testFormat;
+}
 
 var app = new EmberApp({
   eslint: {
     testGenerator: eslintTestGenerator
   }
 });
-
-function render(errors) {
-  if (!errors) { return ''; }
-  return errors.map(function(error) {
-    return error.line + ':' + error.column + ' ' +
-      ' - ' + error.message + ' (' + error.ruleId +')';
-  }).join('\n');
-}
-
-// Qunit test generator
-function eslintTestGenerator(relativePath, errors) {
-  var pass = !errors || errors.length === 0;
-  return "import { module, test } from 'qunit';\n" +
-    "module('ESLint - " + path.dirname(relativePath) + "');\n" +
-    "test('" + relativePath + " should pass ESLint', function(assert) {\n" +
-    "  assert.ok(" + pass + ", '" + relativePath + " should pass ESLint." +
-    jsStringEscape("\n" + render(errors)) + "');\n" +
-   "});\n";
-}
-
-// Mocha test generator
-function eslintTestGenerator(relativePath, errors) {
-  var pass = !errors || errors.length === 0;
-  return "import { describe, it } from 'mocha';\n" +
-    "import { assert } from 'chai';\n" +
-    "describe('ESLint - " + path.dirname(relativePath) + "', function() {\n" +
-    "  it('" + relativePath + " should pass ESLint', function() {\n" +
-    "    assert.ok(" + pass + ", '" + relativePath + " should pass ESLint." +
-    jsStringEscape("\n" + render(errors)) + "');\n" +
-   "  });\n});\n";
-}
-
 ```
+
+for a more detailed example, you can find the implementation in `ember-cli-qunit` [here](https://github.com/ember-cli/ember-cli-qunit/blob/ba906cacc8674e7c0d6d8ed74223a284dcdebf94/index.js#L192-L203).
 
 ## Running tests
 
