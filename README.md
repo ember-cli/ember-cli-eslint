@@ -9,9 +9,17 @@ ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable
 
 ## ESLint Babel
 
-babel-eslint parser will solve any new ECMA missing functionality in ESLint.
+The [`babel-eslint`](https://github.com/babel/babel-eslint) parser will solve any new ECMA missing functionality in ESLint.
 
-Adding the following to your parser after installing will solve this issue:
+Due to an [issue that occurred as the result of changes across `eslint` and `babel-eslint`](https://github.com/babel/babel-eslint/issues/267), versions of `babel-eslint` less than `6.0.0-beta.6` will be incompatible with versions of `eslint` greater than or at `2.4.0` -- which this project relies on after `1.2.x`.
+
+As such, it's recommended that you install `babel-eslint` at a version >= `6.0.0-beta.6`:
+
+```
+npm install --save-dev babel-eslint@6.0.0-beta.6
+```
+
+After installing, simply add the following option to your `eslint` configuration file:
 ```
     "parser": "babel-eslint",
 ```
