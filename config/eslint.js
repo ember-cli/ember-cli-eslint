@@ -12,6 +12,10 @@ module.exports = {
     "object-curly-spacing": 0,
     "prefer-reflect": 0,
     "newline-after-var": 0,
-    "arrow-spacing": 0
+    "arrow-spacing": 0,
+    "no-undef": 0,
+    "array-callback-return": 0,
+    "no-empty-function": 0,
+    "prefer-rest-params": 0
   }
 };
