@@ -18,6 +18,10 @@ module.exports = {
   lintTree: function(type, tree) {
     var project = this.project;
 
+    if (type === 'templates') {
+      return;
+    }
+
     return eslint(tree, {
       testGenerator: this.options.testGenerator || function(relativePath, errors) {
         if (!project.generateTestFile) {
