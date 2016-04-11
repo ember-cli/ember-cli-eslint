@@ -1,5 +1,5 @@
 import Ember from 'ember';
-/* jshint undef: false */
+/* eslint no-undef: 0 */
 someOtherLib();
 
 export default Ember.Controller.extend({
