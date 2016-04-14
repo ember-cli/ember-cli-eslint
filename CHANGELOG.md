@@ -1,3 +1,12 @@
+# 1.3.0 / 13-04-2016
+- `broccoli-lint-eslint@^2.0.0`
+- Passing build
+- Move local `eslint` config settings to `config` directory.
+- Update version of `eslint-config-ember` installed by default blueprint to `0.3.0`.
+- Update project to `ember-cli@2.3.0`.
+- Implement `lintTree` function that calls `project.generateTestFile` -- if it's available.
+- Disable `ember-cli-qunit`'s and `ember-cli-mocha`'s' lintTree hook.
+
 # 1.2.1
 - Updated to eslint@1.4.1
   - eslint-config-ember@0.1.1
