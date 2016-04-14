@@ -1,4 +1,6 @@
-# Ember-cli-eslint [![Build Status](https://travis-ci.org/jonathanKingston/ember-cli-eslint.svg)](https://travis-ci.org/jonathanKingston/ember-cli-eslint) ![Package Status](https://david-dm.org/jonathanKingston/ember-cli-eslint.svg)
+# Ember-cli-eslint
+[![Build Status](https://travis-ci.org/jonathanKingston/ember-cli-eslint.svg)](https://travis-ci.org/jonathanKingston/ember-cli-eslint) ![Package Status](https://david-dm.org/jonathanKingston/ember-cli-eslint.svg)
+![npm](https://img.shields.io/npm/v/ember-cli-eslint.svg)
 
 ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable mechanism for checking applications against a strict set of rules.
 
