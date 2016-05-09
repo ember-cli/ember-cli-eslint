@@ -1,8 +1,10 @@
 'use strict';
 
 module.exports = {
-  "extends": "ember",
-  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "rules": {
     "arrow-spacing": 0,
     "prefer-arrow-callback": 0,
@@ -13,6 +15,6 @@ module.exports = {
     "arrow-spacing": 0,
     "array-callback-return": 0,
     "no-empty-function": 0,
-    "prefer-rest-params": 0    
+    "prefer-rest-params": 0
   }
 };

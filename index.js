@@ -1,4 +1,6 @@
 'use strict';
+var path = require('path');
+var resolve = require('resolve');
 var eslint = require('broccoli-lint-eslint');
 var jsStringEscape = require('js-string-escape');
 
@@ -15,20 +17,29 @@ module.exports = {
     this.options = app.options.eslint || {};
   },
 
-  lintTree: function(type, tree) {
+  lintTree: function(type, node) {
     var project = this.project;
 
     if (type === 'templates') {
       return;
     }
 
-    return eslint(tree, {
+    var broccolLintESLintRoot = path.dirname(resolve.sync('broccoli-lint-eslint'));
+    var babelESLintDir = path.dirname(resolve.sync('babel-eslint', { basedir: broccolLintESLintRoot }));
+
+    return eslint(node, {
+
+      // Find broccoli-lint-eslint's babel-eslint parser and use it as our default
+      options: {
+        parser: babelESLintDir
+      },
+
       testGenerator: this.options.testGenerator || function(relativePath, errors) {
         if (!project.generateTestFile) {
           // Empty test generator. The reason we do that is that `lintTree`
-          // will merge the returned tree with the `tests` directory anyway,
+          // will merge the returned node with the `tests` directory anyway,
           // so we minimize the damage by returning empty files instead of
-          // duplicating app tree.
+          // duplicating app node.
           return '';
         }
 
