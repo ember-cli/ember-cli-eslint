@@ -1,3 +1,9 @@
+# 1.4.0 / 14-05-2016
+- Root configuration no longer relies on `eslint-config-ember`. (Discussion around appropriate base configuration is [still ongoing](https://github.com/ember-cli/ember-cli-eslint/pull/61))
+- Default blueprint now generates `.eslintrc.js` and `tests/.eslintrc.js` (`.eslintrc` has been [deprecated](http://eslint.org/docs/user-guide/configuring#configuration-file-formats).
+- Base root configuration now extends from `eslint:recommended`.
+- Base `/test` configuration now defines `embertest: true` as an `env` setting.
+
 # 1.3.0 / 13-04-2016
 - `broccoli-lint-eslint@^2.0.0`
 - Passing build
