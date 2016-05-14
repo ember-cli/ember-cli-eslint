@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  "extends": "ember",
+  "extends": "eslint:recommended",
   "parser": "babel-eslint",
   "env": {
     "es6": true

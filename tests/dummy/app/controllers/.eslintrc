@@ -1,5 +1,4 @@
 {
-  "extends": "ember",
   "rules": {
     "no-undef": 0
   }
