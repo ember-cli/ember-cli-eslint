@@ -1,13 +1,3 @@
 module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module'
-  },
-  extends: 'eslint:recommended',
-  env: {
-    'browser': true
-  },
-  rules: {
-  }
+  extends: './node_modules/ember-cli-eslint/best-practices/ember-application'
 };

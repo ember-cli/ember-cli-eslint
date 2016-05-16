@@ -8,10 +8,15 @@ ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable
 
 ## Basic setup
 
-* `ember install ember-cli-eslint`
-* This will create a `.eslintrc` file in your project directory setup with the correct parser.
+```
+ember install ember-cli-eslint
+```
 
-## ESLint Babel
+This will create a `.eslintrc.js` file in the root of your project, and another `.eslintrc.js` file inside of `/test`. These files extend from our recommended configurations for [Ember application code](/best-practices/ember-application) and [Ember testing code](/best-practices/ember-test), respectively. However, starting from scratch is as easy as deleting the `extends` declaration and [writing your own configuration rules as usual](http://eslint.org/docs/user-guide/configuring).
+
+## Using ESLint Parsers
+
+***TODO***: Revise documentation about parsing -- how it's done, how we're currently doing it, etc.
 
 The [`babel-eslint`](https://github.com/babel/babel-eslint) parser will solve any new ECMA missing functionality in ESLint.
 
@@ -28,11 +33,8 @@ After installing, simply add the following option to your `eslint` configuration
     "parser": "babel-eslint",
 ```
 
-## Installation
 
-* `ember install ember-cli-eslint`
-
-## Configuration
+## Configuring Your Test Runner
 
 ESLint will be run by `ember-cli-qunit` or `ember-cli-mocha` automatically; **no additional configuration is required**.  If ESLint is *not* being run automatically, try updating your `ember-cli` or `ember-cli-qunit`/`embe-cli-mocha` version.
 
@@ -65,7 +67,7 @@ ember test
 
 The tests are using the dummy app to output tests.
 
-## Licence
+## License
 
 The MIT License (MIT)
 
