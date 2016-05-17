@@ -53,7 +53,7 @@ Alongside this setting, the `hinting` property can then be used to enable/disabl
 ```javascript
 hinting: !isTesting,  
 ```
-
+Furthermore, a `.eslintignore` file can be used to exclude files from linting while the linter is running. Its syntax is identical to `.gitignore` files.
 
 
 ## Installation
