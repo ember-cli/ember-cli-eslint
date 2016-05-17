@@ -28,6 +28,34 @@ After installing, simply add the following option to your `eslint` configuration
     "parser": "babel-eslint",
 ```
 
+## Disabling JSHint
+Congratulations! You've made the leap into the next generation of JavaScript linting. At the moment, however, `ember-cli` defaults to generating applications and addons with a `jshint` configuration, and so you may initially notice the two awkwardly running side by side. Here are a few tips for handling this:
+
+#### ember-cli >= 2.5.0
+As of `ember-cli v.2.5.0`, [`jshint` is provided through its own `ember-cli-jshint` addon](https://github.com/ember-cli/ember-cli/pull/5757). Running `npm uninstall --save-dev ember-cli-jshint`, in addition to removing any `.jshintrc` files from your project should guarantee that its behavior is disabled.
+
+#### ember-cli < 2.5.0
+Controlling linting is a bit trickier on versions of `ember-cli` prior to `2.5.0`. Within your `ember-cli-build.js` file, `ember-cli-qunit` or `ember-cli-mocha` can be configured to have their default linting process disabled during:
+
+```javascript
+'ember-cli-qunit': {
+  useLintTree: false
+}
+```
+or
+```javascript
+'ember-cli-mocha': {
+  useLintTree: false
+}
+```
+Alongside this setting, the `hinting` property can then be used to enable/disable globally:
+
+```javascript
+hinting: !isTesting,  
+```
+
+
+
 ## Installation
 
 * `ember install ember-cli-eslint`
