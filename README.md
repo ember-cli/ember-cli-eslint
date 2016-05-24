@@ -6,10 +6,11 @@
 
 ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable mechanism for checking applications against a strict set of rules.
 
-## Basic setup
-
-* `ember install ember-cli-eslint`
-* This will create a `.eslintrc` file in your project directory setup with the correct parser.
+## Installation
+```
+ember install ember-cli-eslint
+```
+This will create a `.eslintrc` file in your project directory setup with the correct parser.
 
 ## ESLint Babel
 
@@ -56,10 +57,6 @@ hinting: !isTesting,
 Furthermore, a `.eslintignore` file can be used to exclude files from linting while the linter is running. Its syntax is identical to `.gitignore` files.
 
 
-## Installation
-
-* `ember install ember-cli-eslint`
-
 ## Configuration
 
 ESLint will be run by `ember-cli-qunit` or `ember-cli-mocha` automatically; **no additional configuration is required**.  If ESLint is *not* being run automatically, try updating your `ember-cli` or `ember-cli-qunit`/`embe-cli-mocha` version.
@@ -84,7 +81,9 @@ var app = new EmberApp({
 
 for a more detailed example, you can find the implementation in `ember-cli-qunit` [here](https://github.com/ember-cli/ember-cli-qunit/blob/ba906cacc8674e7c0d6d8ed74223a284dcdebf94/index.js#L192-L203).
 
-## Running tests
+
+## Contributing
+### Running tests
 
 ```
 npm install -g phantomjs;
