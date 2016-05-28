@@ -45,7 +45,6 @@ module.exports = function(defaults) {
     'ember-cli-qunit': {
       useLintTree: false
     }
-    ... 
   });
 };
 
@@ -57,7 +56,6 @@ module.exports = function(defaults) {
     'ember-cli-mocha': {
       useLintTree: false
     }
-    ... 
   });
 };
 ```
@@ -69,7 +67,6 @@ const isTesting = process.env.EMBER_ENV === 'test';
 module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
     hinting: !isTesting, 
-    ... 
   });
 };
 ```
