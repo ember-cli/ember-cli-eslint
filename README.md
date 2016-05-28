@@ -39,20 +39,39 @@ As of `ember-cli v.2.5.0`, [`jshint` is provided through its own `ember-cli-jshi
 Controlling linting is a bit trickier on versions of `ember-cli` prior to `2.5.0`. Within your `ember-cli-build.js` file, `ember-cli-qunit` or `ember-cli-mocha` can be configured to have their default linting process disabled during:
 
 ```javascript
-'ember-cli-qunit': {
-  useLintTree: false
-}
+
+module.exports = function(defaults) {
+  const app = new EmberApp(defaults, {
+    'ember-cli-qunit': {
+      useLintTree: false
+    }
+    ... 
+  });
+};
+
 ```
 or
 ```javascript
-'ember-cli-mocha': {
-  useLintTree: false
-}
+module.exports = function(defaults) {
+  const app = new EmberApp(defaults, {
+    'ember-cli-mocha': {
+      useLintTree: false
+    }
+    ... 
+  });
+};
 ```
 Alongside this setting, the `hinting` property can then be used to enable/disable globally:
 
 ```javascript
-hinting: !isTesting,  
+const isTesting = process.env.EMBER_ENV === 'test';
+
+module.exports = function(defaults) {
+  const app = new EmberApp(defaults, {
+    hinting: !isTesting, 
+    ... 
+  });
+};
 ```
 Furthermore, a `.eslintignore` file can be used to exclude files from linting while the linter is running. Its syntax is identical to `.gitignore` files.
 
