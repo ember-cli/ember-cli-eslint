@@ -14,25 +14,6 @@ ember install ember-cli-eslint
 
 This will create a `.eslintrc.js` file in the root of your project, and another `.eslintrc.js` file inside of `/test`. These files extend from our recommended configurations for [Ember application code](/best-practices/ember-application) and [Ember testing code](/best-practices/ember-test), respectively. However, starting from scratch is as easy as deleting the `extends` declaration and [writing your own configuration rules as usual](http://eslint.org/docs/user-guide/configuring).
 
-## Using ESLint Parsers
-
-***TODO***: Revise documentation about parsing -- how it's done, how we're currently doing it, etc.
-
-The [`babel-eslint`](https://github.com/babel/babel-eslint) parser will solve any new ECMA missing functionality in ESLint.
-
-Due to an [issue that occurred as the result of changes across `eslint` and `babel-eslint`](https://github.com/babel/babel-eslint/issues/267), versions of `babel-eslint` less than `6.0.0-beta.6` will be incompatible with versions of `eslint` greater than or at `2.4.0` -- which this project relies on after `1.2.x`.
-
-As such, it's recommended that you install `babel-eslint` at a version >= `6.0.0-beta.6`:
-
-```
-npm install --save-dev babel-eslint@6.0.0-beta.6
-```
-
-After installing, simply add the following option to your `eslint` configuration file:
-```
-    "parser": "babel-eslint",
-```
-
 
 ## Configuring Your Test Runner
 
@@ -42,14 +23,14 @@ If you want to customize the way the tests are generated for your test runner, y
 
 ```javascript
 // ember-cli-build.js
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 function eslintTestGenerator(relativePath, errors) {
-  var testFormat = '....';  // Whatever the format for the tests in your framework is
+  const testFormat = '....';  // Whatever the format for the tests in your framework is
   return testFormat;
 }
 
-var app = new EmberApp({
+const app = new EmberApp({
   eslint: {
     testGenerator: eslintTestGenerator
   }
