@@ -39,14 +39,31 @@ const app = new EmberApp({
 
 for a more detailed example, you can find the implementation in `ember-cli-qunit` [here](https://github.com/ember-cli/ember-cli-qunit/blob/ba906cacc8674e7c0d6d8ed74223a284dcdebf94/index.js#L192-L203).
 
-## Running tests
+## Contributing
 
-```
-npm install -g phantomjs;
-ember test
-```
+### Installation
 
-The tests are using the dummy app to output tests.
+* `git clone` this repository
+* `npm install`
+* `bower install`
+
+### Running
+
+* `ember server`
+* Visit your app at http://localhost:4200.
+
+### Running Tests
+
+* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
+* `ember test`
+* `ember test --server`
+
+### Building
+
+* `ember build`
+
+For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+
 
 ## License
 
