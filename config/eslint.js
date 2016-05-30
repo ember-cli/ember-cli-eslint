@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = {
-  "extends": "ember",
-  "parser": "babel-eslint",
-  "env": {
-    "es6": true
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
   "rules": {
     "prefer-arrow-callback": 0,

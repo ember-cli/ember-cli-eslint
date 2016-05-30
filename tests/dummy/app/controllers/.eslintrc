@@ -1,5 +1,9 @@
 {
-  "extends": "ember",
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "rules": {
     "no-undef": 0
   }
