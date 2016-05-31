@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  "extends": "ember",
+  "extends": "eslint:recommended",
   "parser": "babel-eslint",
   "rules": {
     "arrow-spacing": 0,
@@ -13,6 +13,6 @@ module.exports = {
     "arrow-spacing": 0,
     "array-callback-return": 0,
     "no-empty-function": 0,
-    "prefer-rest-params": 0    
+    "prefer-rest-params": 0
   }
 };
