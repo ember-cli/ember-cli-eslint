@@ -1,6 +1,10 @@
+# 1.4.1 / 30-05-2016
+- Remove `eslint-config-ember` and `phantomjs` from `devDependencies`.
+
 # 1.4.0 / 14-05-2016
 - Root configuration no longer relies on `eslint-config-ember`. (Discussion around appropriate base configuration is [still ongoing](https://github.com/ember-cli/ember-cli-eslint/pull/61))
 - Default blueprint now generates `.eslintrc.js` and `tests/.eslintrc.js` (`.eslintrc` has been [deprecated](http://eslint.org/docs/user-guide/configuring#configuration-file-formats).
+  - **Potential Changes:** If you have a `.eslintrc` or `tests/.eslintrc` file, please reformat it to be a `.eslintrc.js` file (using `module.exports`) so that `ember-cli-eslint` can detect potential duplicates.
 - Base root configuration now extends from `eslint:recommended`.
 - Base `/test` configuration now defines `embertest: true` as an `env` setting.
 
