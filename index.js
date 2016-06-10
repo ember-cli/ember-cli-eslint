@@ -19,11 +19,11 @@ module.exports = {
     var project = this.project;
 
     if (type === 'templates') {
-      return;
+      return undefined;
     }
 
     return eslint(tree, {
-      testGenerator: this.options.testGenerator || function(relativePath, errors) {
+      testGenerator: this.options.testGenerator || function(relativePath, errors, results) {
         if (!project.generateTestFile) {
           // Empty test generator. The reason we do that is that `lintTree`
           // will merge the returned tree with the `tests` directory anyway,
@@ -32,16 +32,28 @@ module.exports = {
           return '';
         }
 
-        var passed = !errors || errors.length === 0;
+        var passed, messages;
+        if (results) {
+          passed = !results.errorCount || results.errorCount.length === 0;
 
-        if (errors) {
-          errors = jsStringEscape('\n' + render(errors));
+          messages = '';
+          if (results.messages) {
+            messages = jsStringEscape('\n' + render(results.messages));
+          }
+        } else {
+          // backwards compat support for broccoli-lint-eslint versions
+          // 2.3.0 and older...
+          passed = !errors || errors.length === 0;
+
+          if (errors) {
+            messages = jsStringEscape('\n' + render(errors));
+          }
         }
 
         return project.generateTestFile('ESLint - ' + relativePath, [{
           name: 'should pass ESLint',
           passed: passed,
-          errorMessage: relativePath + ' should pass ESLint.' + errors
+          errorMessage: relativePath + ' should pass ESLint.' + messages
         }]);
       }
     });
