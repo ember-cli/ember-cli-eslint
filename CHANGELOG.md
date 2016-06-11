@@ -1,3 +1,8 @@
+# 1.5.0 / 09-06-2016
+
+- Utilize third argument to `testGenerator` provided to `broccoli-lint-eslint` if available.
+- Do not fail tests for lint warnings.
+
 # 1.4.1 / 30-05-2016
 - Remove `eslint-config-ember` and `phantomjs` from `devDependencies`.
 
