@@ -12,7 +12,7 @@ ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable
 ember install ember-cli-eslint
 ```
 
-This will create a `.eslintrc.js` file in the root of your project, and another `.eslintrc.js` file inside of `/test`. These files extend from our recommended configurations for [Ember application code](/coding-standard/ember-application.js) and [Ember testing code](/coding-standard/ember-test.js), respectively. However, starting from scratch is as easy as deleting the `extends` declaration and [writing your own configuration rules as usual](http://eslint.org/docs/user-guide/configuring).
+This will create a `.eslintrc.js` file in the root of your project, and another `.eslintrc.js` file inside of `/test`. These files extend from our recommended configurations for [Ember application code](/coding-standard/ember-application.js) and [Ember testing code](/coding-standard/ember-testing.js), respectively. However, starting from scratch is as easy as deleting the `extends` declaration and [writing your own configuration rules as usual](http://eslint.org/docs/user-guide/configuring).
 
 ## Disabling JSHint
 Congratulations! You've made the leap into the next generation of JavaScript linting. At the moment, however, `ember-cli` defaults to generating applications and addons with a `jshint` configuration, and so you may initially notice the two awkwardly running side by side. Here are a few tips for handling this:
