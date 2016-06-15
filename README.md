@@ -6,28 +6,13 @@
 
 ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable mechanism for checking applications against a strict set of rules.
 
-## Installation
+## Basic setup
+
 ```
 ember install ember-cli-eslint
 ```
-This will create a `.eslintrc` file in your project directory setup with the correct parser.
 
-## ESLint Babel
-
-The [`babel-eslint`](https://github.com/babel/babel-eslint) parser will solve any new ECMA missing functionality in ESLint.
-
-Due to an [issue that occurred as the result of changes across `eslint` and `babel-eslint`](https://github.com/babel/babel-eslint/issues/267), versions of `babel-eslint` less than `6.0.0-beta.6` will be incompatible with versions of `eslint` greater than or at `2.4.0` -- which this project relies on after `1.2.x`.
-
-As such, it's recommended that you install `babel-eslint` at a version >= `6.0.0-beta.6`:
-
-```
-npm install --save-dev babel-eslint@6.0.0-beta.6
-```
-
-After installing, simply add the following option to your `eslint` configuration file:
-```
-    "parser": "babel-eslint",
-```
+This will create a `.eslintrc.js` file in the root of your project, and another `.eslintrc.js` file inside of `/test`. These files extend from our recommended configurations for [Ember application code](/coding-standard/ember-application.js) and [Ember testing code](/coding-standard/ember-testing.js), respectively. However, starting from scratch is as easy as deleting the `extends` declaration and [writing your own configuration rules as usual](http://eslint.org/docs/user-guide/configuring).
 
 ## Disabling JSHint
 Congratulations! You've made the leap into the next generation of JavaScript linting. At the moment, however, `ember-cli` defaults to generating applications and addons with a `jshint` configuration, and so you may initially notice the two awkwardly running side by side. Here are a few tips for handling this:
@@ -66,7 +51,7 @@ const isTesting = process.env.EMBER_ENV === 'test';
 
 module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
-    hinting: !isTesting, 
+    hinting: !isTesting,
   });
 };
 ```
@@ -81,14 +66,14 @@ If you want to customize the way the tests are generated for your test runner, y
 
 ```javascript
 // ember-cli-build.js
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 function eslintTestGenerator(relativePath, errors) {
-  var testFormat = '....';  // Whatever the format for the tests in your framework is
+  const testFormat = '....';  // Whatever the format for the tests in your framework is
   return testFormat;
 }
 
-var app = new EmberApp({
+const app = new EmberApp({
   eslint: {
     testGenerator: eslintTestGenerator
   }
@@ -99,16 +84,32 @@ for a more detailed example, you can find the implementation in `ember-cli-qunit
 
 
 ## Contributing
-### Running tests
 
-```
-npm install -g phantomjs;
-ember test
-```
+### Installation
 
-The tests are using the dummy app to output tests.
+* `git clone` this repository
+* `npm install`
+* `bower install`
 
-## Licence
+### Running
+
+* `ember server`
+* Visit your app at http://localhost:4200.
+
+### Running Tests
+
+* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
+* `ember test`
+* `ember test --server`
+
+### Building
+
+* `ember build`
+
+For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+
+
+## License
 
 The MIT License (MIT)
 

@@ -5,6 +5,11 @@ var jsStringEscape = require('js-string-escape');
 module.exports = {
   name: 'ember-cli-eslint',
 
+  // TODO: Disable this (or set it to return false) before committing
+  isDevelopingAddon: function() {
+    return false
+  },
+
   // instructs ember-cli-qunit and ember-cli-mocha to
   // disable their lintTree implementations (which use JSHint)
   isDefaultJSLinter: true,

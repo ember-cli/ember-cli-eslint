@@ -25,7 +25,6 @@
   "author": "Jonathan Kingston",
   "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^6.0.0-beta.6",
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "2.0.1",
     "ember-cli": "2.6.1",
@@ -47,6 +46,7 @@
     "loader.js": "^4.0.1"
   },
   "dependencies": {
+    "babel-eslint": "6.0.4",
     "broccoli-lint-eslint": "^2.0.0",
     "ember-cli-babel": "^5.1.6",
     "js-string-escape": "^1.0.0"
