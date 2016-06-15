@@ -1,3 +1,8 @@
+# 1.6.0 / 15-06-2016
+
+- [Base app configuration](/blueprints/ember-cli-eslint/files/.eslintrc.js) now just extends from `coding-standard/ember-application.js`.
+- [Base test configuration](/blueprints/ember-cli-eslint/files/tests/.eslintrc.js) now just extends from `coding-standard/ember-testing.js`.
+
 # 1.5.0 / 09-06-2016
 
 - Utilize third argument to `testGenerator` provided to `broccoli-lint-eslint` if available.
