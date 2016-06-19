@@ -7,7 +7,7 @@ module.exports = {
 
   // TODO: Disable this (or set it to return false) before committing
   isDevelopingAddon: function() {
-    return false
+    return false;
   },
 
   // instructs ember-cli-qunit and ember-cli-mocha to
