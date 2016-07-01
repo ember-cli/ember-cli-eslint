@@ -1,3 +1,10 @@
+# Changelog
+
+# 1.7.0
+
+- fix blueprints, they now reference the correct coding standard by default
+- upgrade build dependencies
+
 # 1.6.0 / 15-06-2016
 
 - [Base app configuration](/blueprints/ember-cli-eslint/files/.eslintrc.js) now just extends from `coding-standard/ember-application.js`.
