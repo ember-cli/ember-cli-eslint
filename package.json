@@ -46,7 +46,7 @@
     "loader.js": "^4.0.1"
   },
   "dependencies": {
-    "babel-eslint": "6.1.0",
+    "babel-eslint": "6.1.1",
     "broccoli-lint-eslint": "^2.0.0",
     "ember-cli-babel": "^5.1.6",
     "js-string-escape": "^1.0.0"
