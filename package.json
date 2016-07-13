@@ -56,6 +56,8 @@
     "testdouble": "^1.6.0"
   },
   "dependencies": {
+    "broccoli": "^0.16.9",
+    "broccoli-funnel": "^1.0.6",
     "broccoli-lint-eslint": "^2.0.0",
     "ember-cli-babel": "^5.1.6",
     "js-string-escape": "^1.0.0",
