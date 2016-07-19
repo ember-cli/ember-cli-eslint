@@ -1,5 +1,22 @@
 /*eslint-env node*/
 
+var unlink = require('fs').unlink;
+var resolve = require('path').resolve;
+
+var glob = require('glob');
+
+/**
+ * @param {Array} items the elements to iterate over
+ * @return {Promise}
+ */
+function synchronize(items, cb) {
+  return items.reduce(function(promise, item) {
+    return promise.then(function() {
+      return cb.call(this, item);
+    });
+  }, Promise.resolve());
+}
+
 module.exports = {
   name: 'ember-cli-eslint',
 
@@ -10,8 +27,111 @@ module.exports = {
   },
 
   afterInstall: function() {
-    if ('removePackageFromProject' in this) {
-      return this.removePackageFromProject('ember-cli-jshint');
+    var removeJSHintConfig = this._removeJSHintConfig.bind(this);
+
+    if (!this.removePackageFromProject) {
+      return;
     }
+
+    return this.removePackageFromProject('ember-cli-jshint').then(function() {
+      return removeJSHintConfig();
+    });
+  },
+
+  /**
+   * Fine JSHint configuration files and offer to remove them
+   *
+   * @return {Promise}
+   */
+  _removeJSHintConfig: function() {
+    var promptRemove = this._promptRemove.bind(this);
+
+    return this._findJSHintConfigFiles()
+      .then(function(files) {
+        return synchronize(files, function(fileName) {
+          return promptRemove(fileName);
+        });
+      });
+  },
+
+  /**
+   * Find JSHint configuration files
+   *
+   * @return {Promise->string[]} found file names
+   */
+  _findJSHintConfigFiles: function() {
+    var projectRoot = this.project.root;
+    var ui = this.ui;
+
+    var options = {
+      root: projectRoot,
+      ignore: [
+        'node_modules/**/*',
+        'bower_components/**/*'
+      ]
+    };
+
+    ui.startProgress('Searching for JSHint config files');
+    return new Promise(function(resolve, reject) {
+      glob('**/.jshintrc', options, function(error, files) {
+        ui.stopProgress();
+
+        if (error) {
+          reject(error);
+        } else {
+          resolve(files);
+        }
+      });
+    });
+  },
+
+  /**
+   * Prompt the user about whether or not they want to remove the given file
+   *
+   * @param {string} filePath the path to the file
+   * @return {Promise}
+   */
+  _promptRemove: function(filePath) {
+    var removeFile = this._removeFile.bind(this);
+    var message = 'I found a JSHint config file at ' + filePath + '\n  Do you want to remove it?';
+
+    var promptPromise = this.ui.prompt({
+      type: 'confirm',
+      name: 'answer',
+      message: message,
+      choices: [
+        { key: 'y', name: 'Yes, remove it', value: 'yes' },
+        { key: 'n', name: 'No, leave it there', value: 'no' }
+      ]
+    });
+
+    return promptPromise.then(function(response) {
+      if (response.answer) {
+        return removeFile(filePath);
+      } else {
+        return Promise.resolve();
+      }
+    });
+  },
+
+  /**
+   * Remove the specified file
+   *
+   * @param {string} filePath the relative path (from the project root) to remove
+   * @return {Promise}
+   */
+  _removeFile: function(filePath) {
+    var projectRoot = this.project.root;
+    var fullPath = resolve(projectRoot, filePath);
+
+    return new Promise(function(resolve, reject) {
+      unlink(fullPath, function(error) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve();
+        }
+      });
+    });
   }
 };

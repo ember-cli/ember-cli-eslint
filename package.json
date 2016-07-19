@@ -49,6 +49,7 @@
     "babel-eslint": "6.1.0",
     "broccoli-lint-eslint": "^2.0.0",
     "ember-cli-babel": "^5.1.6",
+    "glob": "^7.0.5",
     "js-string-escape": "^1.0.0"
   },
   "keywords": [
