@@ -3,10 +3,15 @@
 var unlink = require('fs').unlink;
 var resolve = require('path').resolve;
 
-var glob = require('glob');
+var walkSync = require('walk-sync');
 
 /**
- * @param {Array} items the elements to iterate over
+ * For each item in the array, call the callback, passing the item as the argument.
+ * However, only call the next callback after the promise returned by the previous
+ * one has resolved.
+ *
+ * @param {*[]} items the elements to iterate over
+ * @param {Function} cb called for each item, with the item as the parameter. Should return a promise
  * @return {Promise}
  */
 function synchronize(items, cb) {
@@ -63,25 +68,20 @@ module.exports = {
     var projectRoot = this.project.root;
     var ui = this.ui;
 
-    var options = {
-      root: projectRoot,
-      ignore: [
-        'node_modules/**/*',
-        'bower_components/**/*'
-      ]
-    };
-
     ui.startProgress('Searching for JSHint config files');
-    return new Promise(function(resolve, reject) {
-      glob('**/.jshintrc', options, function(error, files) {
-        ui.stopProgress();
-
-        if (error) {
-          reject(error);
-        } else {
-          resolve(files);
-        }
+    return new Promise(function(resolve) {
+      var files = walkSync(projectRoot, {
+        globs: ['**/.jshintrc'],
+        ignore: [
+          'bower_components',
+          'dist',
+          'node_modules',
+          'tmp'
+        ]
       });
+
+      ui.stopProgress();
+      resolve(files);
     });
   },
 
