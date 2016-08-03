@@ -3,6 +3,7 @@
 var unlink = require('fs').unlink;
 var resolve = require('path').resolve;
 
+var RSVP = require('rsvp');
 var walkSync = require('walk-sync');
 
 /**
@@ -19,7 +20,7 @@ function synchronize(items, cb) {
     return promise.then(function() {
       return cb.call(this, item);
     });
-  }, Promise.resolve());
+  }, RSVP.resolve());
 }
 
 module.exports = {
@@ -46,16 +47,65 @@ module.exports = {
   /**
    * Fine JSHint configuration files and offer to remove them
    *
-   * @return {Promise}
+   * @return {RSVP.Promise}
    */
   _removeJSHintConfig: function() {
     var promptRemove = this._promptRemove.bind(this);
+    var removeFile = this._removeFile.bind(this);
+    var ui = this.ui;
 
     return this._findJSHintConfigFiles()
       .then(function(files) {
-        return synchronize(files, function(fileName) {
-          return promptRemove(fileName);
+
+        if (files.length === 0) {
+          ui.writeLine('No JSHint config files found.');
+          return RSVP.resolve({
+            result: {
+              deleteFiles: 'none'
+            }
+          });
+        }
+
+        ui.writeLine('\nI found the following JSHint config files:');
+        files.forEach(function(file) {
+          ui.writeLine('  ' + file);
         });
+
+        var promptPromise = ui.prompt({
+          type: 'list',
+          name: 'deleteFiles',
+          message: 'What would you like to do?',
+          choices: [
+            { name: 'Delete them all', value: 'all' },
+            { name: 'Delete individually', value: 'each' },
+            { name: 'Delete none', value: 'none' }
+          ]
+        });
+
+        return RSVP.hash({
+          result: promptPromise,
+          files: files
+        });
+      }).then(function(data) {
+        var value = data.result.deleteFiles;
+        var files = data.files;
+
+        // Noop if we're not deleting any files
+        if (value === 'none') {
+          return RSVP.resolve();
+        }
+
+        if (value === 'all') {
+          return RSVP.all(files.map(function(fileName) {
+            return removeFile(fileName);
+          }));
+        }
+
+        if (value === 'each') {
+          return synchronize(files, function(fileName) {
+            return promptRemove(fileName);
+          });
+        }
       });
   },
 
@@ -69,7 +119,7 @@ module.exports = {
     var ui = this.ui;
 
     ui.startProgress('Searching for JSHint config files');
-    return new Promise(function(resolve) {
+    return new RSVP.Promise(function(resolve) {
       var files = walkSync(projectRoot, {
         globs: ['**/.jshintrc'],
         ignore: [
@@ -89,11 +139,11 @@ module.exports = {
    * Prompt the user about whether or not they want to remove the given file
    *
    * @param {string} filePath the path to the file
-   * @return {Promise}
+   * @return {RSVP.Promise}
    */
   _promptRemove: function(filePath) {
     var removeFile = this._removeFile.bind(this);
-    var message = 'I found a JSHint config file at ' + filePath + '\n  Do you want to remove it?';
+    var message = 'Should I remove `' + filePath + '`?';
 
     var promptPromise = this.ui.prompt({
       type: 'confirm',
@@ -109,7 +159,7 @@ module.exports = {
       if (response.answer) {
         return removeFile(filePath);
       } else {
-        return Promise.resolve();
+        return RSVP.resolve();
       }
     });
   },
@@ -118,13 +168,13 @@ module.exports = {
    * Remove the specified file
    *
    * @param {string} filePath the relative path (from the project root) to remove
-   * @return {Promise}
+   * @return {RSVP.Promise}
    */
   _removeFile: function(filePath) {
     var projectRoot = this.project.root;
     var fullPath = resolve(projectRoot, filePath);
 
-    return new Promise(function(resolve, reject) {
+    return new RSVP.Promise(function(resolve, reject) {
       unlink(fullPath, function(error) {
         if (error) {
           reject(error);
