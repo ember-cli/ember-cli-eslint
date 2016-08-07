@@ -22,6 +22,7 @@ module.exports = {
 
   lintTree: function(type, tree) {
     var project = this.project;
+    var ui = this.ui;
 
     if (type === 'templates') {
       return undefined;
@@ -60,6 +61,16 @@ module.exports = {
           passed: passed,
           errorMessage: relativePath + ' should pass ESLint.' + messages
         }]);
+      },
+
+      console: {
+        log: function(message) {
+          ui.writeLine(message);
+        },
+
+        error: function(message) {
+          ui.writeLine(message, 'ERROR');
+        }
       }
     });
   }
