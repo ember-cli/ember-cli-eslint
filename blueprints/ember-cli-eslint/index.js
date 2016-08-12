@@ -45,7 +45,7 @@ module.exports = {
   },
 
   /**
-   * Fine JSHint configuration files and offer to remove them
+   * Find JSHint configuration files and offer to remove them
    *
    * @return {RSVP.Promise}
    */
