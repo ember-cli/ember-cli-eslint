@@ -76,9 +76,9 @@ module.exports = {
           name: 'deleteFiles',
           message: 'What would you like to do?',
           choices: [
-            { name: 'Delete them all', value: 'all' },
-            { name: 'Delete individually', value: 'each' },
-            { name: 'Delete none', value: 'none' }
+            { name: 'Remove them all', value: 'all' },
+            { name: 'Remove individually', value: 'each' },
+            { name: 'Nothing', value: 'none' }
           ]
         });
 
@@ -174,14 +174,6 @@ module.exports = {
     var projectRoot = this.project.root;
     var fullPath = resolve(projectRoot, filePath);
 
-    return new RSVP.Promise(function(resolve, reject) {
-      unlink(fullPath, function(error) {
-        if (error) {
-          reject(error);
-        } else {
-          resolve();
-        }
-      });
-    });
+    return RSVP.denodeify(unlink)(fullPath);
   }
 };
