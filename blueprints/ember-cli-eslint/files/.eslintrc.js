@@ -1,5 +1,13 @@
 module.exports = {
-  extends: [
-    require.resolve('ember-cli-eslint/coding-standard/ember-application')
-  ]
+  root: true,
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module'
+  },
+  extends: 'eslint:recommended',
+  env: {
+    'browser': true
+  },
+  rules: {
+  }
 };
