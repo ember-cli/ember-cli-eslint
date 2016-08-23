@@ -48,7 +48,9 @@
     "babel-eslint": "6.1.2",
     "broccoli-lint-eslint": "^2.0.0",
     "ember-cli-babel": "^5.1.6",
-    "js-string-escape": "^1.0.0"
+    "js-string-escape": "^1.0.0",
+    "rsvp": "^3.2.1",
+    "walk-sync": "^0.3.0"
   },
   "keywords": [
     "ember-addon",
