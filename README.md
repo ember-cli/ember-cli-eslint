@@ -1,31 +1,71 @@
-# Ember-cli-eslint
-![npm](https://img.shields.io/npm/v/ember-cli-eslint.svg)
-[![Build Status](https://travis-ci.org/ember-cli/ember-cli-eslint.svg)](https://travis-ci.org/ember-cli/ember-cli-eslint)
-![Package Status](https://david-dm.org/ember-cli/ember-cli-eslint.svg)
-[![Ember Observer Score](https://emberobserver.com/badges/ember-cli-eslint.svg)](https://emberobserver.com/addons/ember-cli-eslint)
 
-ESLinting for Ember CLI apps, [ESLint](http://eslint.org/) provides a scriptable mechanism for checking applications against a strict set of rules.
+ember-cli-eslint
+==============================================================================
 
-## Basic setup
+[![Latest NPM release][npm-badge]][npm-badge-url]
+[![TravisCI Build Status][travis-badge]][travis-badge-url]
+[![Ember Observer Score][ember-observer-badge]][ember-observer-badge-url]
+
+[npm-badge]: https://img.shields.io/npm/v/ember-cli-eslint.svg
+[npm-badge-url]: https://www.npmjs.com/package/ember-cli-eslint
+[travis-badge]: https://img.shields.io/travis/ember-cli/ember-cli-eslint/master.svg
+[travis-badge-url]: https://travis-ci.org/ember-cli/ember-cli-eslint
+[ember-observer-badge]: https://emberobserver.com/badges/ember-cli-eslint.svg
+[ember-observer-badge-url]: https://emberobserver.com/addons/ember-cli-eslint
+
+[ESLint](http://eslint.org/) for [Ember CLI](https://ember-cli.com/) apps and addons
+
+
+Installation
+------------------------------------------------------------------------------
+
+ESLint 3 (for Node 4 and above):
 
 ```
-ember install ember-cli-eslint
+ember install ember-cli-eslint@3
 ```
 
-After installation, an `.eslintrc.js` file will be placed in both the root of your project and the `/tests` directory.
+ESLint 2 (for Node 0.10 and above):
 
-## Disabling JSHint
+```
+ember install ember-cli-eslint@2
+```
 
-Congratulations! You've made the leap into the next generation of JavaScript linting. At the moment, however, `ember-cli` defaults to generating applications and addons with a `jshint` configuration, and so you may initially notice the two awkwardly running side by side. Here are a few tips for handling this:
+After installation, an `.eslintrc.js` file will be placed in both the root of
+your project and the `/tests` directory.
+
+Furthermore, a `.eslintignore` file can be used to exclude files from
+linting while the linter is running. Its syntax is identical to
+`.gitignore` files.
+
+
+### Disabling JSHint
+
+Congratulations! You've made the leap into the next generation of JavaScript
+linting. At the moment, however, `ember-cli` defaults to generating
+applications and addons with a `jshint` configuration.
+
+<details>
+  <summary>
+    If you notice the two awkwardly running side by side, click here!
+  </summary>
 
 #### ember-cli >= 2.5.0
-As of `ember-cli v.2.5.0`, [`jshint` is provided through its own `ember-cli-jshint` addon](https://github.com/ember-cli/ember-cli/pull/5757). Running `npm uninstall --save-dev ember-cli-jshint`, in addition to removing any `.jshintrc` files from your project should guarantee that its behavior is disabled.
+
+As of `ember-cli v.2.5.0`,
+[`jshint` is provided through its own `ember-cli-jshint` addon](https://github.com/ember-cli/ember-cli/pull/5757).
+Running `npm uninstall --save-dev ember-cli-jshint`, in addition to removing
+any `.jshintrc` files from your project should guarantee that its behavior
+is disabled.
 
 #### ember-cli < 2.5.0
-Controlling linting is a bit trickier on versions of `ember-cli` prior to `2.5.0`. Within your `ember-cli-build.js` file, `ember-cli-qunit` or `ember-cli-mocha` can be configured to have their default linting process disabled during:
+
+Controlling linting is a bit trickier on versions of `ember-cli` prior to
+`2.5.0`. Within your `ember-cli-build.js` file, `ember-cli-qunit` or
+`ember-cli-mocha` can be configured to have their default linting process
+disabled during:
 
 ```javascript
-
 module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
     'ember-cli-qunit': {
@@ -33,9 +73,10 @@ module.exports = function(defaults) {
     }
   });
 };
-
 ```
+
 or
+
 ```javascript
 module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
@@ -45,7 +86,9 @@ module.exports = function(defaults) {
   });
 };
 ```
-Alongside this setting, the `hinting` property can then be used to enable/disable globally:
+
+Alongside this setting, the `hinting` property can then be used to
+enable/disable globally:
 
 ```javascript
 const isTesting = process.env.EMBER_ENV === 'test';
@@ -56,35 +99,21 @@ module.exports = function(defaults) {
   });
 };
 ```
-Furthermore, a `.eslintignore` file can be used to exclude files from linting while the linter is running. Its syntax is identical to `.gitignore` files.
+
+</details>
 
 
-## Configuration
+Usage
+------------------------------------------------------------------------------
 
-ESLint will be run by `ember-cli-qunit` or `ember-cli-mocha` automatically; **no additional configuration is required**.  If ESLint is *not* being run automatically, try updating your `ember-cli` or `ember-cli-qunit`/`embe-cli-mocha` version.
-
-If you want to customize the way the tests are generated for your test runner, you can define a `testGenerator` in the configuration options:
-
-```javascript
-// ember-cli-build.js
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
-function eslintTestGenerator(relativePath, errors) {
-  const testFormat = '....';  // Whatever the format for the tests in your framework is
-  return testFormat;
-}
-
-const app = new EmberApp({
-  eslint: {
-    testGenerator: eslintTestGenerator
-  }
-});
-```
-
-for a more detailed example, you can find the implementation in `ember-cli-qunit` [here](https://github.com/ember-cli/ember-cli-qunit/blob/ba906cacc8674e7c0d6d8ed74223a284dcdebf94/index.js#L192-L203).
+ESLint will be run by `ember-cli-qunit` or `ember-cli-mocha` automatically
+when you run `ember test`.  If ESLint is *not* being run automatically, try
+updating your `ember-cli` and/or `ember-cli-qunit`/`ember-cli-mocha`
+dependencies.
 
 
-## Contributing
+Contributing
+------------------------------------------------------------------------------
 
 ### Installation
 
@@ -110,26 +139,7 @@ for a more detailed example, you can find the implementation in `ember-cli-qunit
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
 
 
-## License
+License
+------------------------------------------------------------------------------
 
-The MIT License (MIT)
-
-Copyright (c) 2015 Jonathan Kingston
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+This project is licensed under the [MIT License](LICENSE.md).
