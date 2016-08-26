@@ -6,6 +6,10 @@
     "doc": "doc",
     "test": "tests"
   },
+  "files": [
+    "blueprints",
+    "index.js"
+  ],
   "scripts": {
     "build": "ember build",
     "start": "ember server",
