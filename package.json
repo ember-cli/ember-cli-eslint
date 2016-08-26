@@ -16,7 +16,7 @@
     "url": "https://github.com/ember-cli/ember-cli-eslint.git"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4.0"
   },
   "bugs": {
     "url": "https://github.com/ember-cli/ember-cli-eslint/issues"
