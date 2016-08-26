@@ -1,6 +1,13 @@
 # Changelog
 
-# 1.7.0
+# 1.8.0
+
+- Respect Ember CLI `--silent` flag ([#100](https://github.com/ember-cli/ember-cli-eslint/pull/100))
+- Deprecate `coding-standard` files in favor of plain `.eslintrc` files ([#107](https://github.com/ember-cli/ember-cli-eslint/pull/107))
+- Use default ESLint parser unless `babel-eslint` is specifically requested ([#107](https://github.com/ember-cli/ember-cli-eslint/pull/107))
+- Remove `.jshintrc` files automatically on install ([#91](https://github.com/ember-cli/ember-cli-eslint/pull/91))
+
+# 1.7.0 / 02-07-2016
 
 - fix blueprints, they now reference the correct coding standard by default
 - upgrade build dependencies
