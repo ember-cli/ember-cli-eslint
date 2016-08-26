@@ -1,5 +1,9 @@
 # Changelog
 
+# 2.0.0
+
+- Remove deprecated `coding-standard` files ([#108](https://github.com/ember-cli/ember-cli-eslint/pull/108))
+
 # 1.8.0
 
 - Respect Ember CLI `--silent` flag ([#100](https://github.com/ember-cli/ember-cli-eslint/pull/100))
