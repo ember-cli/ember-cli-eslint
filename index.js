@@ -63,6 +63,8 @@ module.exports = {
         }]);
       },
 
+      options: this.options,
+
       console: {
         log: function(message) {
           ui.writeLine(message);
