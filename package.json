@@ -73,5 +73,8 @@
     "before": "ember-cli-qunit",
     "main": "index.js",
     "defaultBlueprint": "ember-cli-eslint"
+  },
+  "publishConfig": {
+    "tag": "latest-v2"
   }
 }
