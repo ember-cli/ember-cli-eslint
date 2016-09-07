@@ -13,8 +13,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test",
-    "nodetest": "mocha node-tests --recursive"
+    "test": "mocha node-tests --recursive"
   },
   "repository": {
     "type": "git",
