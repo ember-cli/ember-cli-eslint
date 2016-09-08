@@ -13,8 +13,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test",
-    "nodetest": "mocha node-tests --recursive"
+    "test": "mocha node-tests --recursive"
   },
   "repository": {
     "type": "git",
@@ -31,6 +30,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
+    "chai": "^3.5.0",
     "ember-cli": "2.7.0",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-blueprint-test-helpers": "^0.13.0",
@@ -47,7 +47,9 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "es6-promise": "^3.2.1",
     "express": "^4.12.3",
+    "fs-extra": "^0.30.0",
     "loader.js": "^4.0.1",
     "mocha": "^3.0.2",
     "testdouble": "^1.6.0"

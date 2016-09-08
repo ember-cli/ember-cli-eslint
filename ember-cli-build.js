@@ -5,33 +5,9 @@ var jsStringEscape = require('js-string-escape');
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
-  var app = new EmberAddon({
-    eslint: {
-      testGenerator: eslintTestGenerator
-    }
+  var app = new EmberAddon(defaults, {
+    // Add options here
   });
-
-
-  function render(errors) {
-    if (!errors) {
-      return '';
-    }
-    return errors.map(function (error) {
-      return error.line + ':' + error.column + ' ' +
-        ' - ' + error.message + ' (' + error.ruleId + ')';
-    }).join('\n');
-  }
-
-  // Qunit test generator
-  function eslintTestGenerator(relativePath, errors) {
-    var pass = !errors || errors.length === 0;
-    return "import { module, test } from 'qunit';\n" +
-      "module('ESLint - " + path.dirname(relativePath) + "');\n" +
-      "test('" + relativePath + " should pass ESLint', function(assert) {\n" +
-      "  assert.ok(" + pass + ", '" + relativePath + " should pass ESLint." +
-      jsStringEscape("\n" + render(errors)) + "');\n" +
-      "});\n";
-  }
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
