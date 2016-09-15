@@ -123,10 +123,10 @@ module.exports = {
       var files = walkSync(projectRoot, {
         globs: ['**/.jshintrc'],
         ignore: [
-          'bower_components',
-          'dist',
-          'node_modules',
-          'tmp'
+          '**/bower_components',
+          '**/dist',
+          '**/node_modules',
+          '**/tmp'
         ]
       });
 
