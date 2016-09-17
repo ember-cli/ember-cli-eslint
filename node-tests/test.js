@@ -58,7 +58,7 @@ function emberTest() {
       resolve({
         error: error,
         stdout: stdout,
-        stderr: stderr,
+        stderr: stderr
       });
     });
   });
