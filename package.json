@@ -52,7 +52,7 @@
     "express": "^4.12.3",
     "fs-extra": "^0.30.0",
     "loader.js": "^4.0.1",
-    "mocha": "^3.0.2",
+    "mocha": "^3.1.1",
     "testdouble": "^1.6.0"
   },
   "dependencies": {
