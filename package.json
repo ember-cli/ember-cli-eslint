@@ -79,5 +79,10 @@
   },
   "publishConfig": {
     "tag": "latest-v2"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "broccoli-lint-eslint"
+    ]
   }
 }
