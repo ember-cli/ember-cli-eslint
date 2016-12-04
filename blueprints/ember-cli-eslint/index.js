@@ -65,7 +65,7 @@ module.exports = {
           });
         }
 
-        ui.writeLine('\nI found the following JSHint config files:');
+        ui.writeLine('\nThe following JSHint config files were found:');
         files.forEach(function(file) {
           ui.writeLine('  ' + file);
         });
