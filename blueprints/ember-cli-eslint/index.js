@@ -33,13 +33,16 @@ module.exports = {
   },
 
   afterInstall: function() {
+    var removeJSHintDep;
+    if (this.removePackageFromProject && 'ember-cli-jshint' in this.project.dependencies()) {
+      removeJSHintDep = this.removePackageFromProject('ember-cli-jshint');
+    } else {
+      removeJSHintDep = Promise.resolve();
+    } 
+
     var removeJSHintConfig = this._removeJSHintConfig.bind(this);
 
-    if (!this.removePackageFromProject) {
-      return;
-    }
-
-    return this.removePackageFromProject('ember-cli-jshint').then(function() {
+    return removeJSHintDep.then(function() {
       return removeJSHintConfig();
     });
   },
@@ -58,7 +61,6 @@ module.exports = {
       .then(function(files) {
 
         if (files.length === 0) {
-          ui.writeLine('No JSHint config files found.');
           return RSVP.resolve({
             result: {
               deleteFiles: 'none'
@@ -66,7 +68,7 @@ module.exports = {
           });
         }
 
-        ui.writeLine('\nI found the following JSHint config files:');
+        ui.writeLine('\nThe following JSHint config files were found:');
         files.forEach(function(file) {
           ui.writeLine('  ' + file);
         });
