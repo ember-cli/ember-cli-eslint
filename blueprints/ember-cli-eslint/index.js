@@ -33,9 +33,12 @@ module.exports = {
   },
 
   afterInstall: function() {
-    var removeJSHintDep = (this.removePackageFromProject && 'ember-cli-jshint' in this.project.dependencies()) ?
-      this.removePackageFromProject('ember-cli-jshint') :
-      Promise.resolve();
+    var removeJSHintDep;
+    if (this.removePackageFromProject && 'ember-cli-jshint' in this.project.dependencies()) {
+      removeJSHintDep = this.removePackageFromProject('ember-cli-jshint');
+    } else {
+      removeJSHintDep = Promise.resolve();
+    } 
 
     var removeJSHintConfig = this._removeJSHintConfig.bind(this);
 
