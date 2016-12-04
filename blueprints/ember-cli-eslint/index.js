@@ -58,7 +58,6 @@ module.exports = {
       .then(function(files) {
 
         if (files.length === 0) {
-          ui.writeLine('No JSHint config files found.');
           return RSVP.resolve({
             result: {
               deleteFiles: 'none'
