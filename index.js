@@ -1,4 +1,7 @@
+/*eslint-env node*/
+
 'use strict';
+
 var eslint = require('broccoli-lint-eslint');
 var jsStringEscape = require('js-string-escape');
 
@@ -18,6 +21,10 @@ module.exports = {
     this._super.included.apply(this, arguments);
     this.jshintrc = app.options.jshintrc;
     this.options = app.options.eslint || {};
+  },
+
+  includedCommands: function() {
+    return require('./lib/commands');
   },
 
   lintTree: function(type, tree) {
