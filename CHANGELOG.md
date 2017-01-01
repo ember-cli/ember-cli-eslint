@@ -1,5 +1,9 @@
 # Changelog
 
+# 3.0.2
+
+- Lazily require `eslint` (speed up non-build related commands by ~ 100ms) ([#145](https://github.com/ember-cli/ember-cli-eslint/pull/145))
+
 # 3.0.1
 
 - Removed noise from `ember-cli-eslint` blueprint ([#143](https://github.com/ember-cli/ember-cli-eslint/pull/143))
