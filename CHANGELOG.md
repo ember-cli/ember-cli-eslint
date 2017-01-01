@@ -1,5 +1,9 @@
 # Changelog
 
+# 3.0.0
+
+- Update `broccoli-lint-eslint` and ESLint to v3.x ([#101](https://github.com/ember-cli/ember-cli-eslint/pull/101))
+
 # 2.0.1
 
 - Removed noise from `ember-cli-eslint` blueprint ([#143](https://github.com/ember-cli/ember-cli-eslint/pull/143))

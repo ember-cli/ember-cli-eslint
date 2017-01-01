@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-eslint",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Ember-cli eslint support, for checking your application matches your coding standards.",
   "directories": {
     "doc": "doc",
@@ -20,7 +20,7 @@
     "url": "https://github.com/ember-cli/ember-cli-eslint.git"
   },
   "engines": {
-    "node": ">= 0.12"
+    "node": ">= 4.0"
   },
   "bugs": {
     "url": "https://github.com/ember-cli/ember-cli-eslint/issues"
@@ -56,7 +56,7 @@
     "testdouble": "^1.6.0"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "^2.0.0",
+    "broccoli-lint-eslint": "^3.1.0",
     "ember-cli-babel": "^5.1.6",
     "js-string-escape": "^1.0.0",
     "rsvp": "^3.2.1",
@@ -76,13 +76,5 @@
     "before": "ember-cli-qunit",
     "main": "index.js",
     "defaultBlueprint": "ember-cli-eslint"
-  },
-  "publishConfig": {
-    "tag": "latest-v2"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "broccoli-lint-eslint"
-    ]
   }
 }
