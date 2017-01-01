@@ -1,6 +1,4 @@
 'use strict';
-var eslint = require('broccoli-lint-eslint');
-var jsStringEscape = require('js-string-escape');
 
 module.exports = {
   name: 'ember-cli-eslint',
@@ -27,6 +25,9 @@ module.exports = {
     if (type === 'templates') {
       return undefined;
     }
+
+    var eslint = require('broccoli-lint-eslint');
+    var jsStringEscape = require('js-string-escape');
 
     return eslint(tree, {
       testGenerator: this.options.testGenerator || function(relativePath, errors, results) {
