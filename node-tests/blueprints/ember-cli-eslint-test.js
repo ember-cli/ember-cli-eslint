@@ -2,6 +2,8 @@
 
 var blueprintHelpers = require('ember-cli-blueprint-test-helpers/helpers');
 var setupTestHooks = blueprintHelpers.setupTestHooks;
+var fs = require('fs-extra');
+var path = require('path');
 var emberNew = blueprintHelpers.emberNew;
 var emberGenerate = blueprintHelpers.emberGenerate;
 
@@ -66,6 +68,33 @@ describe('Acceptance: install ember-cli-eslint', function() {
         // verify that the JSHint config file were deleted
         expect(file('.jshintrc')).to.not.exist;
         expect(file('tests/.jshintrc')).to.not.exist;
+      });
+  });
+
+  it('Does not touch foreign .jshintrc files', function() {
+    var args = ['ember-cli-eslint', 'foo'];
+    var foreignJshintrcPaths = [
+      path.join('.', 'bower_components', 'foreign-package', '.jshintrc'),
+      path.join('.', 'tmp', '.jshintrc'),
+      path.join('.', 'tests', 'dummy', 'app', 'node_modules', 'foreign-package', '.jshintrc'),
+      path.join('.', 'tests', 'dummy', 'app', 'dist', '.jshintrc')
+    ];
+
+    td.when(prompt(td.matchers.anything())).thenResolve({ deleteFiles: 'all' });
+
+    return emberNew()
+      .then(function() {
+        foreignJshintrcPaths.forEach(function(foreignJshintrcPath) {
+          fs.ensureFileSync(foreignJshintrcPath);
+        });
+      })
+      .then(function() {
+        return emberGenerate(args);
+      })
+      .then(function() {
+        foreignJshintrcPaths.forEach(function(foreignJshintrcPath) {
+          expect(file(foreignJshintrcPath)).to.exist;
+        });
       });
   });
 
