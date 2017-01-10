@@ -18,3 +18,12 @@ before_install:
 install:
   - npm install
   - bower install
+
+deploy:
+  provider: npm
+  email: stefan.penner+ember-cli@gmail.com
+  api_key:
+    secure: GJexXCwAwkiezqiivJLdCDcwHyNOkyWGhaIC9wEovlrmn6UZlNL1lZvkTHBMaxFRtTa5ZmwLWHCLPiNIbpqFb1JdSpmAq+7P/qjSMMm6JO8hlA8Yn57TP4rZKG++xKRjZe7f13K5yqrJWFtWyHiBppU047GAP8gBsBlcjUVzAGM=
+  on:
+    tags: true
+    repo: ember-cli/ember-cli-eslint
