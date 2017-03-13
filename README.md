@@ -112,6 +112,15 @@ updating your `ember-cli` and/or `ember-cli-qunit`/`ember-cli-mocha`
 dependencies.
 
 
+### On Build Files
+
+Please note that if you are using this to lint files which are part of the build
+process (ie. index.js, ember-cli-build.js, config/), whether in an application or
+as part of an addon, they will not be linted. It is recommended that `eslint` is
+setup separately to lint these files and can be setup as an npm script and run as
+part of a CI process.
+
+
 Contributing
 ------------------------------------------------------------------------------
 
