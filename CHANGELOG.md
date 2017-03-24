@@ -1,5 +1,9 @@
 # Changelog
 
+# 3.0.3
+
+- Remove direct `ember-cli-babel` dependency (it was unused).
+
 # 3.0.2
 
 - Lazily require `eslint` (speed up non-build related commands by ~ 100ms) ([#145](https://github.com/ember-cli/ember-cli-eslint/pull/145))
