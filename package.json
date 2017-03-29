@@ -2,36 +2,48 @@
   "name": "ember-cli-eslint",
   "version": "3.0.3",
   "description": "Ember-cli eslint support, for checking your application matches your coding standards.",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
+  "keywords": [
+    "ember",
+    "ember-addon",
+    "eslint",
+    "eslint ember",
+    "eslint ember-cli",
+    "lint"
+  ],
+  "homepage": "https://github.com/ember-cli/ember-cli-eslint",
+  "bugs": {
+    "url": "https://github.com/ember-cli/ember-cli-eslint/issues"
   },
+  "license": "MIT",
+  "author": "Jonathan Kingston",
   "files": [
     "blueprints",
     "index.js"
   ],
-  "scripts": {
-    "build": "ember build",
-    "start": "ember server",
-    "test": "mocha node-tests --recursive"
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ember-cli/ember-cli-eslint.git"
   },
-  "engines": {
-    "node": ">= 4.0"
+  "scripts": {
+    "build": "ember build",
+    "start": "ember server",
+    "test": "mocha node-tests --recursive"
   },
-  "bugs": {
-    "url": "https://github.com/ember-cli/ember-cli-eslint/issues"
+  "dependencies": {
+    "broccoli-lint-eslint": "^3.1.0",
+    "js-string-escape": "^1.0.0",
+    "rsvp": "^3.2.1",
+    "walk-sync": "^0.3.0"
   },
-  "homepage": "https://github.com/ember-cli/ember-cli-eslint",
-  "author": "Jonathan Kingston",
-  "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "chai": "^3.5.0",
-    "ember-cli": "2.9.1",
+    "ember-cli": "2.10.1",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.0.0-beta.7",
     "ember-cli-blueprint-test-helpers": "^0.17.1",
@@ -55,21 +67,9 @@
     "mocha": "^3.0.2",
     "testdouble": "^2.0.1"
   },
-  "dependencies": {
-    "broccoli-lint-eslint": "^3.1.0",
-    "js-string-escape": "^1.0.0",
-    "rsvp": "^3.2.1",
-    "walk-sync": "^0.3.0"
+  "engines": {
+    "node": ">= 4.0"
   },
-  "keywords": [
-    "ember-addon",
-    "lint",
-    "eslint",
-    "eslint ember",
-    "eslint ember-cli",
-    "ember"
-  ],
-  "main": "index.js",
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "before": "ember-cli-qunit",
