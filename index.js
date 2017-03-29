@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-env node */
+
 module.exports = {
   name: 'ember-cli-eslint',
 

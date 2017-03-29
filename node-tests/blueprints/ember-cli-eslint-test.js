@@ -6,6 +6,7 @@ var fs = require('fs-extra');
 var path = require('path');
 var emberNew = blueprintHelpers.emberNew;
 var emberGenerate = blueprintHelpers.emberGenerate;
+var modifyPackages = blueprintHelpers.modifyPackages;
 
 var chai = require('ember-cli-blueprint-test-helpers/chai');
 var expect = chai.expect;
@@ -20,7 +21,7 @@ describe('Acceptance: install ember-cli-eslint', function() {
   setupTestHooks(this);
 
   var Blueprint = requireFromCLI('lib/models/blueprint');
-  var MockUI = requireFromCLI('tests/helpers/mock-ui');
+  var MockUI = require('console-ui/mock');
 
   var taskFor, installTaskRun, uninstallTaskRun, prompt;
   beforeEach(function() {
@@ -51,6 +52,13 @@ describe('Acceptance: install ember-cli-eslint', function() {
 
     return emberNew()
       .then(function() {
+        fs.ensureFileSync('.jshintrc');
+        fs.ensureFileSync('tests/.jshintrc');
+
+        modifyPackages([
+          { name: 'ember-cli-jshint', dev: true }
+        ]);
+
         expect(file('package.json')).to.contain('ember-cli-jshint');
         expect(file('.jshintrc')).to.exist;
         expect(file('tests/.jshintrc')).to.exist;
@@ -105,6 +113,9 @@ describe('Acceptance: install ember-cli-eslint', function() {
 
     return emberNew()
       .then(function() {
+        fs.ensureFileSync('.jshintrc');
+        fs.ensureFileSync('tests/.jshintrc');
+
         expect(file('.jshintrc')).to.exist;
         expect(file('tests/.jshintrc')).to.exist;
       })

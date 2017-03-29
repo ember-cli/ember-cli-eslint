@@ -1,5 +1,7 @@
-/* jshint node: true */
-/* global require, module */
+'use strict';
+
+/* eslint-env node */
+
 var path = require('path');
 var jsStringEscape = require('js-string-escape');
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
