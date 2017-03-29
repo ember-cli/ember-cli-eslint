@@ -20,7 +20,7 @@ describe('Acceptance: install ember-cli-eslint', function() {
   setupTestHooks(this);
 
   var Blueprint = requireFromCLI('lib/models/blueprint');
-  var MockUI = requireFromCLI('tests/helpers/mock-ui');
+  var MockUI = require('console-ui/mock');
 
   var taskFor, installTaskRun, uninstallTaskRun, prompt;
   beforeEach(function() {
