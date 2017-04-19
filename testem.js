@@ -1,7 +1,4 @@
-'use strict';
-
 /* eslint-env node */
-
 module.exports = {
   "test_page": "tests/index.html?hidepassed",
   "disable_watching": true,
