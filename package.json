@@ -62,7 +62,7 @@
     "ember-source": "~2.12.1",
     "es6-promise": "^4.0.0",
     "express": "^4.12.3",
-    "fs-extra": "^2.0.0",
+    "fs-extra": "^3.0.0",
     "loader.js": "^4.2.3",
     "mocha": "^3.0.2",
     "testdouble": "^2.0.1"
