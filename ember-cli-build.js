@@ -3,7 +3,6 @@
 /* eslint-env node */
 
 var path = require('path');
-var jsStringEscape = require('js-string-escape');
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {

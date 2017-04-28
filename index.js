@@ -16,7 +16,6 @@ module.exports = {
 
   included: function (app) {
     this._super.included.apply(this, arguments);
-    this.jshintrc = app.options.jshintrc;
     this.options = app.options.eslint || {};
   },
 
