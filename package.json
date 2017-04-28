@@ -35,7 +35,7 @@
     "test": "mocha node-tests --recursive"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "^3.1.0",
+    "broccoli-lint-eslint": "^3.3.0",
     "js-string-escape": "^1.0.0",
     "rsvp": "^3.2.1",
     "walk-sync": "^0.3.0"
