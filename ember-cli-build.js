@@ -6,9 +6,15 @@ var path = require('path');
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
-  var app = new EmberAddon(defaults, {
-    // Add options here
-  });
+  let options = {
+    eslint: {},
+  };
+
+  if (process.env['NO_GROUPING']) {
+    options.eslint.group = false;
+  }
+
+  var app = new EmberAddon(defaults, options);
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
