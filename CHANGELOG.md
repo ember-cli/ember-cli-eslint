@@ -1,5 +1,9 @@
 # Changelog
 
+# 3.1.0
+
+- Use new `group` option of `broccoli-lint-eslint` by default ([#176](https://github.com/ember-cli/ember-cli-eslint/pull/176))
+
 # 3.0.3
 
 - Remove direct `ember-cli-babel` dependency (it was unused).
