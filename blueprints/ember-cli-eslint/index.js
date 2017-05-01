@@ -26,19 +26,19 @@ function synchronize(items, cb) {
 module.exports = {
   name: 'ember-cli-eslint',
 
-  normalizeEntityName: function() {
+  normalizeEntityName() {
     // this prevents an error when the entityName is
     // not specified (since that doesn't actually matter
     // to us
   },
 
-  afterInstall: function() {
+  afterInstall() {
     var removeJSHintDep;
     if (this.removePackageFromProject && 'ember-cli-jshint' in this.project.dependencies()) {
       removeJSHintDep = this.removePackageFromProject('ember-cli-jshint');
     } else {
       removeJSHintDep = Promise.resolve();
-    } 
+    }
 
     var removeJSHintConfig = this._removeJSHintConfig.bind(this);
 
@@ -52,7 +52,7 @@ module.exports = {
    *
    * @return {RSVP.Promise}
    */
-  _removeJSHintConfig: function() {
+  _removeJSHintConfig() {
     var promptRemove = this._promptRemove.bind(this);
     var removeFile = this._removeFile.bind(this);
     var ui = this.ui;
@@ -116,7 +116,7 @@ module.exports = {
    *
    * @return {Promise->string[]} found file names
    */
-  _findJSHintConfigFiles: function() {
+  _findJSHintConfigFiles() {
     var projectRoot = this.project.root;
     var ui = this.ui;
 
@@ -143,7 +143,7 @@ module.exports = {
    * @param {string} filePath the path to the file
    * @return {RSVP.Promise}
    */
-  _promptRemove: function(filePath) {
+  _promptRemove(filePath) {
     var removeFile = this._removeFile.bind(this);
     var message = 'Should I remove `' + filePath + '`?';
 
@@ -172,7 +172,7 @@ module.exports = {
    * @param {string} filePath the relative path (from the project root) to remove
    * @return {RSVP.Promise}
    */
-  _removeFile: function(filePath) {
+  _removeFile(filePath) {
     var projectRoot = this.project.root;
     var fullPath = resolve(projectRoot, filePath);
 
