@@ -112,6 +112,28 @@ updating your `ember-cli` and/or `ember-cli-qunit`/`ember-cli-mocha`
 dependencies.
 
 
+### Configuration
+
+`ember-cli-eslint` can be configured through the `eslint` key in your
+`ember-cli-build.js` file:
+
+```js
+let app = new EmberApp(defaults, {
+  eslint: {
+    testGenerator: 'qunit',
+    group: true,
+  }
+});
+```
+
+- `testGenerator` is automatically detected if `ember-cli-qunit` or
+  `ember-cli-mocha` are used, but can also be set to `qunit` and
+  `mocha` manually.
+
+- `group` can be set to `false` to go back to the previous behavior where
+  every generated test was contained in its own separate module.
+
+
 ### On Build Files
 
 Please note that if you are using this to lint files which are part of the build
