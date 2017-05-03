@@ -18,6 +18,10 @@ before_install:
 install:
   - yarn install --no-lockfile
 
+before_deploy:
+  - yarn global add auto-dist-tag
+  - auto-dist-tag --write
+
 deploy:
   provider: npm
   email: stefan.penner+ember-cli@gmail.com
