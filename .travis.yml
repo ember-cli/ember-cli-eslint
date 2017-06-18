@@ -16,7 +16,7 @@ before_install:
   - phantomjs --version
 
 install:
-  - yarn install --no-lockfile
+  - yarn install --ignore-engines --no-lockfile --non-interactive
 
 before_deploy:
   - yarn global add auto-dist-tag
