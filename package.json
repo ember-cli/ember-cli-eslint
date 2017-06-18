@@ -64,7 +64,7 @@
     "fs-extra": "^3.0.0",
     "loader.js": "^4.2.3",
     "mocha": "^3.0.2",
-    "testdouble": "^2.0.1"
+    "testdouble": "^3.1.0"
   },
   "engines": {
     "node": ">= 4.0"
