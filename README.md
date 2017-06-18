@@ -19,6 +19,12 @@ ember-cli-eslint
 Installation
 ------------------------------------------------------------------------------
 
+ESLint 4 (for Node 4 and above):
+
+```
+ember install ember-cli-eslint@4
+```
+
 ESLint 3 (for Node 4 and above):
 
 ```
