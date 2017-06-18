@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.0.0
+
+- Update to ESLint 4 ([#191](https://github.com/ember-cli/ember-cli-eslint/pull/191))
+
 # 3.1.0
 
 - Use new `group` option of `broccoli-lint-eslint` by default ([#176](https://github.com/ember-cli/ember-cli-eslint/pull/176))
