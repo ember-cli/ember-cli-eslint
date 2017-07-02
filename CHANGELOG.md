@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.1.0
+
+- Allow passthrough of `rulesDir` option to `broccoli-lint-eslint` ([#197](https://github.com/ember-cli/ember-cli-eslint/pull/197))
+
 # 4.0.0
 
 - Update to ESLint 4 ([#191](https://github.com/ember-cli/ember-cli-eslint/pull/191))
