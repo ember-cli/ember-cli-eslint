@@ -45,6 +45,10 @@ module.exports = {
       testGenerator: this.options.testGenerator || this._testGenerator,
       group: (this.options.group !== false) ? type : undefined,
 
+      options: {
+        rulesDir: this.options.rulesDir || 'eslint_rules'
+      },
+
       console: {
         log: function(message) {
           ui.writeLine(message);
