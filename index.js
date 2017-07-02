@@ -46,7 +46,7 @@ module.exports = {
       group: (this.options.group !== false) ? type : undefined,
 
       options: {
-        rulesDir: this.options.rulesDir || 'eslint_rules'
+        rulesDir: this.options.rulesDir || 'eslint-rules'
       },
 
       console: {

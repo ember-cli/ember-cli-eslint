@@ -128,7 +128,7 @@ let app = new EmberApp(defaults, {
   eslint: {
     testGenerator: 'qunit',
     group: true,
-    rulesDir: 'eslint_rules',
+    rulesDir: 'eslint-rules',
   }
 });
 ```
@@ -141,7 +141,7 @@ let app = new EmberApp(defaults, {
   every generated test was contained in its own separate module.
 
 - `rulesDir` is the name of the directory for your custom eslint rules.
-  It defaults to `'eslint_rules'`.
+  It defaults to `eslint-rules`.
 
 ### On Build Files
 
