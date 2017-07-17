@@ -10,6 +10,10 @@ module.exports = function (defaults) {
     options.eslint.group = false;
   }
 
+  if (process.env['JSX']) {
+    options.eslint.extensions = ['js', 'jsx'];
+  }
+
   var app = new EmberAddon(defaults, options);
 
   /*

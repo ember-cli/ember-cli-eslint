@@ -44,6 +44,7 @@ module.exports = {
     return ESLint.create(tree, {
       testGenerator: this.options.testGenerator || this._testGenerator,
       group: (this.options.group !== false) ? type : undefined,
+      extensions: this.options.extensions,
 
       options: {
         rulesDir: this.options.rulesDir || 'eslint-rules'
