@@ -100,6 +100,29 @@ describe('ember-cli-eslint', function() {
         .to.contain('ok 11 PhantomJS 2.1 - ESLint | tests: test-helper.js');
     })
   });
+
+  it('passes if jsx files are included', function() {
+    process.env['JSX'] = true;
+
+    return emberTest().then(function(result) {
+      expect(result.error).to.not.exist;
+      expect(result.stdout.match(/[^\r\n]+/g))
+        .to.contain('ok 1 PhantomJS 2.1 - ESLint | app: app.js')
+        .to.contain('ok 2 PhantomJS 2.1 - ESLint | app: controllers/thing.js')
+        .to.contain('ok 3 PhantomJS 2.1 - ESLint | app: models/thing.js')
+        .to.contain('ok 4 PhantomJS 2.1 - ESLint | app: resolver.js')
+        .to.contain('ok 5 PhantomJS 2.1 - ESLint | app: router.js')
+        .to.contain('ok 6 PhantomJS 2.1 - ESLint | app: routes/thing.jsx')
+        .to.not.contain('not ok 7 PhantomJS 2.1 - ESLint | app: unused.js');
+
+      expect(result.stdout.match(/[^\r\n]+/g))
+        .to.contain('ok 7 PhantomJS 2.1 - ESLint | tests: helpers/destroy-app.js')
+        .to.contain('ok 8 PhantomJS 2.1 - ESLint | tests: helpers/module-for-acceptance.js')
+        .to.contain('ok 9 PhantomJS 2.1 - ESLint | tests: helpers/resolver.js')
+        .to.contain('ok 10 PhantomJS 2.1 - ESLint | tests: helpers/start-app.js')
+        .to.contain('ok 11 PhantomJS 2.1 - ESLint | tests: test-helper.js');
+    })
+  });
 });
 
 function emberTest() {
