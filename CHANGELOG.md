@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.2.0
+
+- Make extensions configurable ([#203](https://github.com/ember-cli/ember-cli-eslint/pull/203))
+
 # 4.1.0
 
 - Allow passthrough of `rulesDir` option to `broccoli-lint-eslint` ([#197](https://github.com/ember-cli/ember-cli-eslint/pull/197))
