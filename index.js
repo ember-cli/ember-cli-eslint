@@ -50,6 +50,8 @@ module.exports = {
         rulesDir: this.options.rulesDir || 'eslint-rules'
       },
 
+      options: this.options,
+
       console: {
         log: function(message) {
           ui.writeLine(message);
