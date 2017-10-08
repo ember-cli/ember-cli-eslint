@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.2.1
+
+- Fix detection of test frameworks for prerelease versions. (#215)
+
 # 4.2.0
 
 - Make extensions configurable ([#203](https://github.com/ember-cli/ember-cli-eslint/pull/203))
