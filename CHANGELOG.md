@@ -1,8 +1,12 @@
 # Changelog
 
+# 4.2.2
+
+- Fix file deletion bug. ([#222](https://github.com/ember-cli/ember-cli-eslint/pull/222))
+
 # 4.2.1
 
-- Fix detection of test frameworks for prerelease versions. (#215)
+- Fix detection of test frameworks for prerelease versions. ([#215](https://github.com/ember-cli/ember-cli-eslint/pull/215))
 
 # 4.2.0
 
