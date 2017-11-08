@@ -35,7 +35,7 @@
     "test": "mocha node-tests --recursive"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "^4.1.0",
+    "broccoli-lint-eslint": "^4.2.1",
     "ember-cli-version-checker": "^2.1.0",
     "rsvp": "^4.6.1",
     "walk-sync": "^0.3.0"
