@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.2.3
+
+- Extend test framework detection to `ember-qunit` and `ember-mocha` ([#225](https://github.com/ember-cli/ember-cli-eslint/pull/225))
+
 # 4.2.2
 
 - Fix file deletion bug. ([#222](https://github.com/ember-cli/ember-cli-eslint/pull/222))
