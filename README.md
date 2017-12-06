@@ -134,9 +134,9 @@ let app = new EmberApp(defaults, {
 });
 ```
 
-- `testGenerator` is automatically detected if `ember-cli-qunit` or
-  `ember-cli-mocha` are used, but can also be set to `qunit` and
-  `mocha` manually.
+- `testGenerator` is automatically detected if `ember-qunit`/`ember-cli-qunit`
+  or `ember-mocha`/`ember-cli-mocha` are used, but can also be set to `qunit`
+  and `mocha` manually.
 
 - `group` can be set to `false` to go back to the previous behavior where
   every generated test was contained in its own separate module.
