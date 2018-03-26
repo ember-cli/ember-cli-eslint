@@ -45,6 +45,8 @@ module.exports = {
       testGenerator: this.options.testGenerator || this._testGenerator,
       group: (this.options.group !== false) ? type : undefined,
       extensions: this.options.extensions,
+      throwOnError: this.options.throwOnError,
+      throwOnWarn: this.options.throwOnWarn,
 
       options: {
         rulesDir: this.options.rulesDir || 'eslint-rules'

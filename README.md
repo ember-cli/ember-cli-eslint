@@ -130,6 +130,8 @@ let app = new EmberApp(defaults, {
     group: true,
     rulesDir: 'eslint-rules',
     extensions: ['js'],
+    throwOnError: true,
+    throwOnWarn: true,
   }
 });
 ```
@@ -145,6 +147,11 @@ let app = new EmberApp(defaults, {
   It defaults to `eslint-rules`.
 
 - `extensions` is an array containing the file extensions to lint. If you want to lint JavaScript and TypeScript files for example it should be set to `['js', 'ts']`. _NOTE_: If you add Typescript files `typescript-eslint-parser` has to be installed and specified as the parser. For more information take a look at the [`typescript-eslint-parser`](https://github.com/eslint/typescript-eslint-parser)
+
+- `throwOnError` can be set to `true` to cause builds to fail on first eslint rule violation with `error`-level severity
+
+- `throwOnWarn` can be set to `true` to cause builds to fail on first eslint rule violation with `warn`-level severity. _NOTE_: Setting this to true will automatically enable `throwOnError` behavior
+
 
 ### On Build Files
 
