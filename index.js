@@ -42,6 +42,7 @@ module.exports = {
     var ESLint = require('broccoli-lint-eslint');
 
     return ESLint.create(tree, {
+      format: this.options.format,
       testGenerator: this.options.testGenerator || this._testGenerator,
       group: (this.options.group !== false) ? type : undefined,
       extensions: this.options.extensions,
