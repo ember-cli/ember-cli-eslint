@@ -1,5 +1,110 @@
+==============================================================================
 
-## ember-cli-eslint
+[![Latest NPM release][npm-badge]][npm-badge-url]
+[![TravisCI Build Status][travis-badge]][travis-badge-url]
+[![Ember Observer Score][ember-observer-badge]][ember-observer-badge-url]
+
+[npm-badge]: https://img.shields.io/npm/v/ember-cli-eslint.svg
+[npm-badge-url]: https://www.npmjs.com/package/ember-cli-eslint
+[travis-badge]: https://img.shields.io/travis/ember-cli/ember-cli-eslint/master.svg
+[travis-badge-url]: https://travis-ci.org/ember-cli/ember-cli-eslint
+[ember-observer-badge]: https://emberobserver.com/badges/ember-cli-eslint.svg
+[ember-observer-badge-url]: https://emberobserver.com/addons/ember-cli-eslint
+
+[ESLint](http://eslint.org/) for [Ember CLI](https://ember-cli.com/) apps and addons
+
+
+Installation
+------------------------------------------------------------------------------
+
+ESLint 4 (for Node 4 and above):
+
+```
+ember install ember-cli-eslint@4
+```
+
+ESLint 3 (for Node 4 and above):
+
+```
+ember install ember-cli-eslint@3
+```
+
+ESLint 2 (for Node 0.10 and above):
+
+```
+ember install ember-cli-eslint@2
+```
+
+After installation, an `.eslintrc.js` file will be placed in both the root of
+your project and the `/tests` directory.
+
+Furthermore, a `.eslintignore` file can be used to exclude files from
+linting while the linter is running. Its syntax is identical to
+`.gitignore` files.
+
+
+### Disabling JSHint
+
+Congratulations! You've made the leap into the next generation of JavaScript
+linting. At the moment, however, `ember-cli` defaults to generating
+applications and addons with a `jshint` configuration.
+
+<details>
+  <summary>
+    If you notice the two awkwardly running side by side, click here!
+  </summary>
+
+#### ember-cli >= 2.5.0
+
+As of `ember-cli v.2.5.0`,
+[`jshint` is provided through its own `ember-cli-jshint` addon](https://github.com/ember-cli/ember-cli/pull/5757).
+Running `npm uninstall --save-dev ember-cli-jshint`, in addition to removing
+any `.jshintrc` files from your project should guarantee that its behavior
+is disabled.
+
+#### ember-cli < 2.5.0
+
+Controlling linting is a bit trickier on versions of `ember-cli` prior to
+`2.5.0`. Within your `ember-cli-build.js` file, `ember-cli-qunit` or
+`ember-cli-mocha` can be configured to have their default linting process
+disabled during:
+
+```javascript
+module.exports = function(defaults) {
+  const app = new EmberApp(defaults, {
+    'ember-cli-qunit': {
+      useLintTree: false
+    }
+  });
+};
+```
+
+or
+
+```javascript
+module.exports = function(defaults) {
+  const app = new EmberApp(defaults, {
+    'ember-cli-mocha': {
+      useLintTree: false
+    }
+  });
+};
+```
+
+Alongside this setting, the `hinting` property can then be used to
+enable/disable globally:
+
+```javascript
+const isTesting = process.env.EMBER_ENV === 'test';
+
+module.exports = function(defaults) {
+  const app = new EmberApp(defaults, {
+    hinting: !isTesting,
+  });
+};
+```
+
+</details>
 
 Usage
 ------------------------------------------------------------------------------
