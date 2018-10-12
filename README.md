@@ -1,3 +1,4 @@
+ember-cli-eslint
 ==============================================================================
 
 [![Latest NPM release][npm-badge]][npm-badge-url]
