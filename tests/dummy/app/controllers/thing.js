@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 /* eslint no-undef: 0 */
 someOtherLib();
 
-export default Ember.Controller.extend({
+export default Controller.extend({
 });
