@@ -2,6 +2,8 @@
 ember-cli-eslint
 ==============================================================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ember-cli/ember-cli-eslint.svg)](https://greenkeeper.io/)
+
 [![Latest NPM release][npm-badge]][npm-badge-url]
 [![TravisCI Build Status][travis-badge]][travis-badge-url]
 [![Ember Observer Score][ember-observer-badge]][ember-observer-badge-url]
