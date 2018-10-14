@@ -1,6 +1,5 @@
 var fs = require('fs-extra');
 var exec = require('child_process').exec;
-var Promise = require('es6-promise').Promise;
 
 var expect = require('chai').expect;
 
