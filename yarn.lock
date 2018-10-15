@@ -2293,10 +2293,13 @@ ember-cli-htmlbars@^3.0.1:
     json-stable-stringify "^1.0.0"
     strip-bom "^3.0.0"
 
-ember-cli-inject-live-reload@^1.4.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-1.6.1.tgz#82b8f5be454815a75e7f6d42c9ce0bc883a914a3"
-  integrity sha1-grj1vkVIFadef21Cyc4LyIOpFKM=
+ember-cli-inject-live-reload@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-2.0.0.tgz#6808b46f17a9625861f66c3b86aff169001cd65d"
+  integrity sha512-AUGORo3Y2eIhEI/TgW3Bmvr6cESmEbfjuv6SuGV9rwXCZ74QM2Kf4SSaVcU4LSY779kDIm47nB8FIg0O7ckgww==
+  dependencies:
+    clean-base-url "^1.0.0"
+    ember-cli-version-checker "^2.1.2"
 
 ember-cli-internal-test-helpers@^0.9.1:
   version "0.9.1"
@@ -2453,7 +2456,7 @@ ember-cli-version-checker@^1.1.6, ember-cli-version-checker@^1.1.7, ember-cli-ve
   dependencies:
     semver "^5.3.0"
 
-ember-cli-version-checker@^2.0.0, ember-cli-version-checker@^2.1.0:
+ember-cli-version-checker@^2.0.0, ember-cli-version-checker@^2.1.0, ember-cli-version-checker@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-2.1.2.tgz#305ce102390c66e4e0f1432dea9dc5c7c19fed98"
   integrity sha512-sjkHGr4IGXnO3EUcY21380Xo9Qf6bC8HWH4D62bVnrQop/8uha5XgMQRoAflMCeH6suMrezQL287JUoYc2smEw==
