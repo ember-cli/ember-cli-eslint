@@ -1,3 +1,5 @@
+'use strict'
+
 var fs = require('fs-extra');
 var exec = require('child_process').exec;
 
@@ -28,13 +30,12 @@ describe('ember-cli-eslint', function() {
         .to.contain(`ok 2 ${browser} - ESLint | controllers/thing.js: should pass ESLint`)
         .to.contain(`ok 3 ${browser} - ESLint | helpers/destroy-app.js: should pass ESLint`)
         .to.contain(`ok 4 ${browser} - ESLint | helpers/module-for-acceptance.js: should pass ESLint`)
-        .to.contain(`ok 5 ${browser} - ESLint | helpers/resolver.js: should pass ESLint`)
-        .to.contain(`ok 6 ${browser} - ESLint | helpers/start-app.js: should pass ESLint`)
-        .to.contain(`ok 7 ${browser} - ESLint | models/thing.js: should pass ESLint`)
-        .to.contain(`ok 8 ${browser} - ESLint | resolver.js: should pass ESLint`)
-        .to.contain(`ok 9 ${browser} - ESLint | router.js: should pass ESLint`)
-        .to.contain(`ok 10 ${browser} - ESLint | test-helper.js: should pass ESLint`)
-        .to.not.contain(`not ok 11 ${browser} - ESLint | unused.js: should pass ESLint`);
+        .to.contain(`ok 5 ${browser} - ESLint | helpers/start-app.js: should pass ESLint`)
+        .to.contain(`ok 6 ${browser} - ESLint | models/thing.js: should pass ESLint`)
+        .to.contain(`ok 7 ${browser} - ESLint | resolver.js: should pass ESLint`)
+        .to.contain(`ok 8 ${browser} - ESLint | router.js: should pass ESLint`)
+        .to.contain(`ok 9 ${browser} - ESLint | test-helper.js: should pass ESLint`)
+        .to.not.contain(`not ok 10 ${browser} - ESLint | unused.js: should pass ESLint`);
     })
   });
 
@@ -50,13 +51,12 @@ describe('ember-cli-eslint', function() {
         .to.contain(`ok 2 ${browser} - ESLint | controllers/thing.js: should pass ESLint`)
         .to.contain(`ok 3 ${browser} - ESLint | helpers/destroy-app.js: should pass ESLint`)
         .to.contain(`ok 4 ${browser} - ESLint | helpers/module-for-acceptance.js: should pass ESLint`)
-        .to.contain(`ok 5 ${browser} - ESLint | helpers/resolver.js: should pass ESLint`)
-        .to.contain(`ok 6 ${browser} - ESLint | helpers/start-app.js: should pass ESLint`)
-        .to.contain(`ok 7 ${browser} - ESLint | models/thing.js: should pass ESLint`)
-        .to.contain(`ok 8 ${browser} - ESLint | resolver.js: should pass ESLint`)
-        .to.contain(`ok 9 ${browser} - ESLint | router.js: should pass ESLint`)
-        .to.contain(`ok 10 ${browser} - ESLint | test-helper.js: should pass ESLint`)
-        .to.contain(`not ok 11 ${browser} - ESLint | unused.js: should pass ESLint`);
+        .to.contain(`ok 5 ${browser} - ESLint | helpers/start-app.js: should pass ESLint`)
+        .to.contain(`ok 6 ${browser} - ESLint | models/thing.js: should pass ESLint`)
+        .to.contain(`ok 7 ${browser} - ESLint | resolver.js: should pass ESLint`)
+        .to.contain(`ok 8 ${browser} - ESLint | router.js: should pass ESLint`)
+        .to.contain(`ok 9 ${browser} - ESLint | test-helper.js: should pass ESLint`)
+        .to.contain(`not ok 10 ${browser} - ESLint | unused.js: should pass ESLint`);
     })
   });
 
@@ -76,9 +76,8 @@ describe('ember-cli-eslint', function() {
       expect(result.stdout.match(/[^\r\n]+/g))
         .to.contain(`ok 6 ${browser} - ESLint | tests: helpers/destroy-app.js`)
         .to.contain(`ok 7 ${browser} - ESLint | tests: helpers/module-for-acceptance.js`)
-        .to.contain(`ok 8 ${browser} - ESLint | tests: helpers/resolver.js`)
-        .to.contain(`ok 9 ${browser} - ESLint | tests: helpers/start-app.js`)
-        .to.contain(`ok 10 ${browser} - ESLint | tests: test-helper.js`);
+        .to.contain(`ok 8 ${browser} - ESLint | tests: helpers/start-app.js`)
+        .to.contain(`ok 9 ${browser} - ESLint | tests: test-helper.js`);
     })
   });
 
@@ -100,9 +99,8 @@ describe('ember-cli-eslint', function() {
       expect(result.stdout.match(/[^\r\n]+/g))
         .to.contain(`ok 7 ${browser} - ESLint | tests: helpers/destroy-app.js`)
         .to.contain(`ok 8 ${browser} - ESLint | tests: helpers/module-for-acceptance.js`)
-        .to.contain(`ok 9 ${browser} - ESLint | tests: helpers/resolver.js`)
-        .to.contain(`ok 10 ${browser} - ESLint | tests: helpers/start-app.js`)
-        .to.contain(`ok 11 ${browser} - ESLint | tests: test-helper.js`);
+        .to.contain(`ok 9 ${browser} - ESLint | tests: helpers/start-app.js`)
+        .to.contain(`ok 10 ${browser} - ESLint | tests: test-helper.js`);
     })
   });
 
@@ -123,9 +121,8 @@ describe('ember-cli-eslint', function() {
       expect(result.stdout.match(/[^\r\n]+/g))
         .to.contain(`ok 7 ${browser} - ESLint | tests: helpers/destroy-app.js`)
         .to.contain(`ok 8 ${browser} - ESLint | tests: helpers/module-for-acceptance.js`)
-        .to.contain(`ok 9 ${browser} - ESLint | tests: helpers/resolver.js`)
-        .to.contain(`ok 10 ${browser} - ESLint | tests: helpers/start-app.js`)
-        .to.contain(`ok 11 ${browser} - ESLint | tests: test-helper.js`);
+        .to.contain(`ok 9 ${browser} - ESLint | tests: helpers/start-app.js`)
+        .to.contain(`ok 10 ${browser} - ESLint | tests: test-helper.js`);
     })
   });
 });
