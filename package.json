@@ -41,7 +41,7 @@
     "walk-sync": "^0.3.0"
   },
   "devDependencies": {
-    "broccoli-asset-rev": "^2.4.5",
+    "broccoli-asset-rev": "^3.0.0",
     "chai": "^4.0.2",
     "ember-cli": "~2.16.0",
     "ember-cli-babel": "^6.8.2",
