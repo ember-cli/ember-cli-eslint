@@ -1810,11 +1810,6 @@ colors@^1.1.2:
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
   integrity sha1-FopHAXVran9RoSzgyXv6KMCE7WM=
 
-colors@~0.6.0-1:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/colors/-/colors-0.6.2.tgz#2423fe6678ac0c5dae8852e5d0e5be08c997abcc"
-  integrity sha1-JCP+ZnisDF2uiFLl0OW+CMmXq8w=
-
 commander@2.15.1:
   version "2.15.1"
   resolved "http://registry.npmjs.org/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
@@ -1833,11 +1828,6 @@ commander@2.9.0, commander@^2.6.0:
   integrity sha1-nJkJQXbhIkDLItbFFGCYQA/g99Q=
   dependencies:
     graceful-readlink ">= 1.0.0"
-
-commander@~2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.1.0.tgz#d121bbae860d9992a3d517ba96f56588e47c6781"
-  integrity sha1-0SG7roYNmZKj1Re6lvVliOR8Z4E=
 
 commander@~2.11.0:
   version "2.11.0"
@@ -2236,20 +2226,18 @@ ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.8.1, ember-cli-babel@^6.8.2:
     clone "^2.0.0"
     ember-cli-version-checker "^2.0.0"
 
-ember-cli-blueprint-test-helpers@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-blueprint-test-helpers/-/ember-cli-blueprint-test-helpers-0.18.0.tgz#bc101b3e1df9b9b5db6ff626d71521e4926599d1"
-  integrity sha1-vBAbPh35ubXbb/Ym1xUh5JJlmdE=
+ember-cli-blueprint-test-helpers@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-blueprint-test-helpers/-/ember-cli-blueprint-test-helpers-0.19.1.tgz#26df9724a6cb48f7acfa391dec7ec772888b0929"
+  integrity sha512-lyfCvR5gxbNn5mJKfVAUj3Q5K1VyJo3miAaQ9zk2dL7ijs281C3j73WYyCK7tWBoBJ04jOzkb+YXV6jFwVpvsA==
   dependencies:
     chai "^4.1.0"
     chai-as-promised "^7.0.0"
     chai-files "^1.0.0"
     debug "^3.0.0"
     ember-cli-internal-test-helpers "^0.9.1"
-    exists-sync "0.0.3"
-    findup "^0.1.5"
-    fs-extra "^4.0.0"
-    lodash.merge "^4.4.0"
+    fs-extra "^5.0.0"
+    testdouble "^3.2.6"
     tmp-sync "^1.0.0"
 
 ember-cli-broccoli-sane-watcher@^2.0.4:
@@ -3212,14 +3200,6 @@ findup-sync@0.4.3, findup-sync@^0.4.2:
     is-glob "^2.0.1"
     micromatch "^2.3.7"
     resolve-dir "^0.1.0"
-
-findup@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/findup/-/findup-0.1.5.tgz#8ad929a3393bac627957a7e5de4623b06b0e2ceb"
-  integrity sha1-itkpozk7rGJ5V6fl3kYjsGsOLOs=
-  dependencies:
-    colors "~0.6.0-1"
-    commander "~2.1.0"
 
 fireworm@^0.7.0:
   version "0.7.1"
@@ -4468,6 +4448,11 @@ lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.1, lodash@^4.17.2, l
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
   integrity sha1-eCA6TRwyiuHYbcpkYONptX9AVa4=
 
+lodash@^4.17.11:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
 log-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
@@ -5284,6 +5269,14 @@ quibble@^0.5.1:
   dependencies:
     lodash "^4.17.2"
 
+quibble@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.5.5.tgz#669fb731520a923e0a98f8076b7eb55e409f73f9"
+  integrity sha512-cIePu3BtGlaTW1bjFgBcLT6QMxD8PtnZDCmPJUzO+RepIz8GuXsmZIEPGFjlPxzG9zfIj4nNLPxBDlUbvr9ESg==
+  dependencies:
+    lodash "^4.17.2"
+    resolve "^1.7.1"
+
 quick-temp@^0.1.2, quick-temp@^0.1.3, quick-temp@^0.1.5, quick-temp@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/quick-temp/-/quick-temp-0.1.8.tgz#bab02a242ab8fb0dd758a3c9776b32f9a5d94408"
@@ -5522,7 +5515,7 @@ resolve@^1.4.0:
   dependencies:
     path-parse "^1.0.5"
 
-resolve@^1.5.0:
+resolve@^1.5.0, resolve@^1.7.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   integrity sha512-AicPrAC7Qu1JxPCZ9ZgCZlY35QgFnNqc+0LtbRNxnVw4TXvjQ72wnuL9JQcEBgXkI9JM8MsT9kaQoHcpCRJOYA==
@@ -6120,6 +6113,17 @@ testdouble@^3.1.0:
     resolve "^1.3.3"
     stringify-object-es5 "^2.5.0"
 
+testdouble@^3.2.6:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.8.2.tgz#f9e8499c2bae2dc1ad1b438a23c74e2808afa058"
+  integrity sha512-K1R8h5QGbYYZYHRMXnSkgKD8fVNYtj36Km1wZ5+GNcMmESjy2KwIpRhBdJiYVDaByLUKJ0EoLI0uWC6tku3yiw==
+  dependencies:
+    es6-map "^0.1.5"
+    lodash "^4.17.11"
+    quibble "^0.5.5"
+    stringify-object-es5 "^2.5.0"
+    theredoc "^1.0.0"
+
 testem@^1.18.0:
   version "1.18.4"
   resolved "https://registry.yarnpkg.com/testem/-/testem-1.18.4.tgz#e45fed922bec2f54a616c43f11922598ac97eb41"
@@ -6161,6 +6165,11 @@ text-table@~0.2.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.0.1.tgz#be8cf22d65379c151319f88f0335ad8f667abdca"
   integrity sha1-vozyLWU3nBUTGfiPAzWtj2Z6vco=
+
+theredoc@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/theredoc/-/theredoc-1.0.0.tgz#bcace376af6feb1873efbdd0f91ed026570ff062"
+  integrity sha512-KU3SA3TjRRM932jpNfD3u4Ec3bSvedyo5ITPI7zgWYnKep7BwQQaxlhI9qbO+lKJoRnoAbEVfMcAHRuKVYikDA==
 
 through@^2.3.6, through@^2.3.8:
   version "2.3.8"
