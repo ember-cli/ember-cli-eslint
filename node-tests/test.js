@@ -12,6 +12,7 @@ var execSync = require('child_process').execSync;
 var chromeVersion = execSync('google-chrome --product-version').toString();
 var browser = 'Chrome ' + chromeVersion.split('.').slice(0, 2).join('.');
 var path = require('path');
+var Promise = require('rsvp').Promise;
 
 describe('ember-cli-eslint', function() {
   this.timeout(60000);
