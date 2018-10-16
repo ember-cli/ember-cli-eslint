@@ -5066,9 +5066,9 @@ livereload-js@^2.2.2:
   integrity sha1-bIclfmSKtHW8JOoldFftzB+NC8I=
 
 loader.js@^4.2.3:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/loader.js/-/loader.js-4.3.0.tgz#736c13eb8afdf75abd6c2d7b4f7fd40e1105a71f"
-  integrity sha1-c2wT64r991q9bC17T3/UDhEFpx8=
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/loader.js/-/loader.js-4.7.0.tgz#a1a52902001c83631efde9688b8ab3799325ef1f"
+  integrity sha512-9M2KvGT6duzGMgkOcTkWb+PR/Q2Oe54df/tLgHGVmFpAmtqJ553xJh6N63iFYI2yjo2PeJXbS5skHi/QpJq4vA==
 
 locate-path@^2.0.0:
   version "2.0.0"
