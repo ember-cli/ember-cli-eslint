@@ -64,7 +64,6 @@
     "ember-source": "~3.5.0",
     "ember-source-channel-url": "^1.1.0",
     "ember-try": "^1.0.0",
-    "es6-promise": "^4.0.0",
     "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-node": "^7.0.1",
     "express": "^4.12.3",

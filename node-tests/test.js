@@ -10,7 +10,6 @@ var expect = chai.expect;
 var FAILING_FILE = __dirname + '/../tests/dummy/app/unused.js';
 
 var path = require('path');
-var Promise = require('rsvp').Promise;
 
 describe('ember-cli-eslint', function() {
   this.timeout(60000);
