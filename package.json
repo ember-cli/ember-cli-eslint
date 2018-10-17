@@ -37,7 +37,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "broccoli-lint-eslint": "^4.2.1",
+    "broccoli-lint-eslint": "^5.0.0",
     "ember-cli-version-checker": "^2.1.0",
     "rsvp": "^4.6.1",
     "walk-sync": "^0.3.0"
