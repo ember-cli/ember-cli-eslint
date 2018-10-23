@@ -48,7 +48,7 @@ describe('Acceptance: install ember-cli-eslint', function() {
   it('removes the JSHint addon', function() {
     var args = ['ember-cli-eslint', 'foo'];
 
-    td.when(prompt(td.matchers.anything())).thenResolve({ deleteFiles: 'all' });
+    td.when(prompt(td.matchers.anything())).thenResolve({ answer: 'overwrite', deleteFiles: 'all' });
 
     return emberNew()
       .then(function() {
@@ -88,7 +88,7 @@ describe('Acceptance: install ember-cli-eslint', function() {
       path.join('.', 'tests', 'dummy', 'app', 'dist', '.jshintrc')
     ];
 
-    td.when(prompt(td.matchers.anything())).thenResolve({ deleteFiles: 'all' });
+    td.when(prompt(td.matchers.anything())).thenResolve({ answer: 'overwrite', deleteFiles: 'all' });
 
     return emberNew()
       .then(function() {
@@ -109,7 +109,7 @@ describe('Acceptance: install ember-cli-eslint', function() {
   it('does not remove any files if it shouldn\'t', function() {
     var args = ['ember-cli-eslint', 'foo'];
 
-    td.when(prompt(td.matchers.anything())).thenResolve({ deleteFiles: 'none' });
+    td.when(prompt(td.matchers.anything())).thenResolve({ answer: 'overwrite', deleteFiles: 'none' });
 
     return emberNew()
       .then(function() {

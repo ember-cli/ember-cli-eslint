@@ -1,4 +1,3 @@
-
 ember-cli-eslint
 ==============================================================================
 
@@ -161,6 +160,7 @@ Contributing
 ### Installation
 
 * `git clone` this repository
+* `cd ember-cli-eslint`
 * `npm install`
 * `bower install`
 
@@ -174,13 +174,21 @@ Contributing
 * `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
+* `ember try:each`
 
-### Building
+### Linting
 
-* `ember build`
+* `npm run lint:hbs`
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
+
+
+### Running the dummy application
+
+* `ember serve`
+* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
-
 
 License
 ------------------------------------------------------------------------------
