@@ -31,6 +31,7 @@
   "main": "index.js",
   "scripts": {
     "build": "ember build",
+    "changelog": "lerna-changelog",
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "mocha node-tests --recursive",
@@ -67,6 +68,7 @@
     "eslint-plugin-node": "^7.0.1",
     "express": "^4.12.3",
     "fs-extra": "^7.0.0",
+    "lerna-changelog": "^0.8.2",
     "loader.js": "^4.7.0",
     "mocha": "^5.0.0",
     "qunit-dom": "^0.8.0",
