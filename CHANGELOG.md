@@ -1,5 +1,21 @@
 # Changelog
 
+## v5.1.0 (2019-01-18)
+
+#### :rocket: Enhancement
+* [#240](https://github.com/ember-cli/ember-cli-eslint/pull/240) Expose `format` property. ([@UTurista](https://github.com/UTurista))
+
+#### :bug: Bug Fix
+* [#335](https://github.com/ember-cli/ember-cli-eslint/pull/335) Fix `VersionChecker` construction. ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#311](https://github.com/ember-cli/ember-cli-eslint/pull/311) TravisCI: Remove deprecated `sudo: false` option. ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 3
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+- Vasco ([UTurista](https://github.com/UTurista))
+
+
 ## v5.0.0 (2018-11-09)
 
 #### :boom: Breaking Change
