@@ -18,7 +18,7 @@ module.exports = {
     this._super.init && this._super.init.apply(this, arguments);
 
     var VersionChecker = require('ember-cli-version-checker');
-    var checker = new VersionChecker(this);
+    var checker = new VersionChecker(this.project);
 
     if (checker.for('ember-qunit', 'npm').exists() || checker.for('ember-cli-qunit', 'npm').exists()) {
       this._testGenerator = 'qunit';
