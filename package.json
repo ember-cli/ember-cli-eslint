@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "broccoli-lint-eslint": "^5.0.0",
-    "ember-cli-version-checker": "^3.1.1",
+    "ember-cli-version-checker": "^3.1.2",
     "rsvp": "^4.6.1",
     "walk-sync": "^1.1.3"
   },
