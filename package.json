@@ -71,7 +71,7 @@
     "lerna-changelog": "^0.8.2",
     "loader.js": "^4.7.0",
     "mocha": "^6.1.4",
-    "qunit-dom": "^0.8.5",
+    "qunit-dom": "^0.9.0",
     "testdouble": "^3.12.0"
   },
   "engines": {
