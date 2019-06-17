@@ -143,7 +143,7 @@ let app = new EmberApp(defaults, {
 - `rulesDir` is the name of the directory for your custom eslint rules.
   It defaults to `eslint-rules`.
 
-- `extensions` is an array containing the file extensions to lint. If you want to lint JavaScript and TypeScript files for example it should be set to `['js', 'ts']`. _NOTE_: If you add Typescript files `typescript-eslint-parser` has to be installed and specified as the parser. For more information take a look at the [`typescript-eslint-parser`](https://github.com/eslint/typescript-eslint-parser)
+- `extensions` is an array containing the file extensions to lint. If you want to lint JavaScript and TypeScript files for example it should be set to `['js', 'ts']`. _NOTE_: If you add Typescript files `@typescript/eslint-parser` has to be installed and specified as the parser. For more information take a look at the [`@typescript/eslint-parser`](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser)
 
 ### On Build Files
 
