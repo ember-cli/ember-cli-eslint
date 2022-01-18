@@ -12,8 +12,17 @@ ember-cli-eslint
 [ember-observer-badge]: https://emberobserver.com/badges/ember-cli-eslint.svg
 [ember-observer-badge-url]: https://emberobserver.com/addons/ember-cli-eslint
 
-[ESLint](http://eslint.org/) for [Ember CLI](https://ember-cli.com/) apps and addons
+[ESLint](http://eslint.org/) for [Ember CLI](https://ember-cli.com/) apps and addons.
 
+## 🔴 DEPRECATED 🔴
+
+Please use [ESLint](https://github.com/eslint/eslint) directly instead.
+
+More info / background:
+
+* https://github.com/ember-cli/rfcs/pull/121
+* https://github.com/emberjs/rfcs/blob/master/text/0121-remove-ember-cli-eslint.md
+* https://github.com/ember-cli/ember-cli/pull/9009
 
 Installation
 ------------------------------------------------------------------------------
